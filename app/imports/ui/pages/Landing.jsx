@@ -9,7 +9,7 @@ const Landing = () => (
   <Container
     fluid
     id="landing-page"
-    syle={{ padding: 0 }}
+    style={{ padding: 0 }}
   >
     <Container
       fluid
@@ -58,7 +58,7 @@ const Landing = () => (
         <Col md={4}>
           <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
             <div>
-              <img src="/images/change.png" alt="People Volunteering" style={{ maxHeight: 128 }} />
+              <img src="/images/change.png" alt="Earth Icon" style={{ maxHeight: 128 }} />
               <h3>Change</h3>
               <p>Change the world and your community! Voluntree creates a detailed report showing you your contributions to the community!</p>
               <Button variant="outline-dark" as={NavLink} to="/"> View Our Impact </Button>
