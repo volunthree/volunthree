@@ -11,10 +11,9 @@ const NavBar = () => {
   const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
-  const menuStyle = { color: 'white' };
   // TODO: Add links to the respective pages of the NavBar.
   return (
-    <Navbar bg="primary" expand="lg" style={menuStyle}>
+    <Navbar bg="success" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand id={COMPONENT_IDS.NAVBAR_LANDING_PAGE} as={NavLink} to="/">
           <img

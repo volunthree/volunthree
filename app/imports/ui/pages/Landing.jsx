@@ -27,7 +27,7 @@ const Landing = () => (
       }}
     >
       <div>
-        <h1>The Voluntree</h1>
+        <h1>TheVoluntree</h1>
         <p>Volunteering Simplified. Impact Amplified.</p>
       </div>
     </Container>
