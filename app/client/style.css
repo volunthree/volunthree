@@ -5,13 +5,14 @@
 :root {
   --matr-navbar-bg: #ECECEC;
   --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-navbar-text: #000000;
 }
 
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  --bs-light-rgb: var(--matr-navbar-text);
 }
 
 /* Set the SignIn and SignUp alerts background. */
@@ -25,4 +26,9 @@ body {
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+/* Footer has no bottom margin value */
+.custom-footer {
+  margin-bottom: 20px;
 }
