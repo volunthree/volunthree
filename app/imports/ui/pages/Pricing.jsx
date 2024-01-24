@@ -24,19 +24,19 @@ const Pricing = () => (
     >
       <div>
         <h1>Pricing</h1>
-        <p>Streamlining The Volunteer Experience</p>
+        <p>Contribute to a Non-Profit!</p>
       </div>
     </Container>
     <Container style={{ paddingTop: '25px' }}>
       <Row className="d-flex align-items-center justify-content-center">
         <Col>
           <div>
-            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Our Mission</h1>
+            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Make a Donation</h1>
             <p style={{ fontSize: '18px' }}>
-              Our mission is to empower individuals to impact their communities by enhancing the volunteer experience. We aim to remove barriers for volunteers and philanthropists, providing an accessible platform that connects community
-              needs with those eager to help. Recognizing the inherent desire to contribute, our platform is designed to facilitate and streamline the process of finding and engaging in volunteer opportunities. We are dedicated to making it
-              easier for those ready to serve to connect with the avenues where they can make the most impact.
-
+              Find an organization that you would like to donate too!
+              Millions of people across the Impact sector trust
+              VolunTree. Join us in ensuring all of America’s
+              communities are supported today, tomorrow, and for generations to come.
             </p>
           </div>
         </Col>
@@ -50,12 +50,10 @@ const Pricing = () => (
         </Col>
         <Col style={{ paddingLeft: '30px' }}>
           <div>
-            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Transforming Volunteer Engagement</h1>
+            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Become a Sponsor</h1>
             <p style={{ fontSize: '18px' }}>
-              We strive to remove the friction that both volunteers and organizers may face during set up. So, we want to create
-              a platform that is both easy and engaging to use. Not only that, we also want to socialize the volunteer experience, bringing volunteering
-              into communities. Thus, to do this: we address the core reasons individuals choose to volunteer, and we address the problem of
-              recruitment.
+              Regardless of who you are trying to activate into service or where you need to reach them, we have products, services,
+              and partnership opportunities designed to magnify your impact—all powered by the immense value of our Open Network.
             </p>
           </div>
         </Col>

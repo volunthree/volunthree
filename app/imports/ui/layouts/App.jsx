@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/volunteer-opportunities" element={<VolunteerList />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/pricing" element={<AboutUs />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
