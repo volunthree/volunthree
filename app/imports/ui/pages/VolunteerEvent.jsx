@@ -5,6 +5,7 @@ import { Stuffs } from '../../api/stuff/StuffCollection';
 import StuffItem from '../components/StuffItem';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { PAGE_IDS } from '../utilities/PageIDs';
+import { Card}
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const VolunteerEvent = () => {
