@@ -1,5 +1,5 @@
 {
-  "name": "meteor-application-template-production",
+  "name": "the-voluntree",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.22.6",

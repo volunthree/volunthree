@@ -27,7 +27,7 @@ const Landing = () => (
       }}
     >
       <div>
-        <h1>The Voluntree</h1>
+        <h1>TheVoluntree</h1>
         <p>Volunteering Simplified. Impact Amplified.</p>
       </div>
     </Container>
@@ -76,11 +76,11 @@ const Landing = () => (
         }}
       >
         <Col md={5}>
-          <img src="/images/landingImage2.png" alt="People Volunteering" style={{ maxWidth: '100%', height: '90%' }} />
+          <img src="/images/landingImage2.png" alt="People Volunteering" style={{ maxWidth: '95%', height: '100%' }} />
         </Col>
         <Col md={7}>
           <div style={{ marginLeft: '40px', marginRight: '40px' }}>
-            <h2>What is Voluntree?</h2>
+            <h2>What is The Voluntree?</h2>
             <p>At The Voluntree, we believe in simplifying volunteering, fostering connections, and making an impact. Our platform empowers you to effortlessly discover, connect,
               and contribute to meaningful causes, all while connecting with like-minded individuals who share your passion. With The Voluntree, you can streamline your volunteer journey, expand your network,
               and amplify your impact, all in one place. Soon, you can join us in building a stronger, more connected community through the power of volunteering.
