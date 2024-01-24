@@ -19,6 +19,7 @@ import NotAuthorized from '../pages/NotAuthorized';
 import { ROLE } from '../../api/role/Role';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ManageDatabase from '../pages/ManageDatabase';
+import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
 import Pricing from '../pages/Pricing';
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/manage-database" element={<AdminProtectedRoute ready={ready}><ManageDatabase /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
+          <Route path="/volunteer-opportunities" element={<VolunteerList />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/pricing" element={<AboutUs />} />
           <Route path="*" element={<NotFound />} />
