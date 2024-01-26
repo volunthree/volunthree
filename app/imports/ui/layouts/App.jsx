@@ -22,6 +22,7 @@ import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
 import Pricing from '../pages/Pricing';
+import VolunteerCalendar from '../pages/VolunteerCalendar';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/manage-database" element={<AdminProtectedRoute ready={ready}><ManageDatabase /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/volunteer-opportunities" element={<VolunteerList />} />
+          <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<NotFound />} />
