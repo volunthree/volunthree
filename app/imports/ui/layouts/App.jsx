@@ -21,6 +21,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
+import Pricing from '../pages/Pricing';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/volunteer-opportunities" element={<VolunteerList />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
