@@ -22,6 +22,7 @@ import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
 import Pricing from '../pages/Pricing';
+import ContactUs from '../pages/ContactUs';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/volunteer-opportunities" element={<VolunteerList />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/contactus" element={<ContactUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

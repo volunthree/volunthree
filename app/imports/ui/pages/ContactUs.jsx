@@ -20,8 +20,8 @@ const ContactUs = () => (
               <td><Image roundedCircle src="/images/meteor-logo.png" width="150px" /></td>
               <td>
                 Sara Kenley, founder
-                <strong>Email:</strong> sarakenley@thevoluntree.com
-                <strong>Phone number:</strong> 808-978-8290
+                <br /><strong>Email:</strong> sarakenley@thevoluntree.com
+                <br /><strong>Phone number:</strong> 808-978-8290
               </td>
             </tr>
           </table>
