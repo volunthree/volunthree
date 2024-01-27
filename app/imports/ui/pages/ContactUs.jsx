@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 
-/* A simple static component to render some text for the landing page. */
+/* A simple static component to render some text for the contact us page. */
 /*
         <p>Sara Kenley, founder</p>
         <p>sarakenley@thevoluntree.com</p>
