@@ -29,7 +29,8 @@ const Pricing = () => (
     </Container>
     <Container fluid style={{ height: '100px', padding: '20px', margin: '20px' }}>
       <div style={{ textAlign: 'center' }}>
-        <h1> Voluntree Pricing Options </h1>
+        <h1> Voluntree Membership Plans </h1>
+        <p>Choose the best plan for you and start making an impact today!</p>
       </div>
     </Container>
     <Container fluid style={{ padding: '20px', margin: '20px' }}>
@@ -38,6 +39,7 @@ const Pricing = () => (
       >
         <Col md={4}>
           <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/0Sub.jpg" style={{ maxHeight: '220px' }} />
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Volunteer</Card.Title>
               <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$0 / month</Card.Subtitle>
@@ -84,6 +86,7 @@ const Pricing = () => (
         </Col>
         <Col md={4}>
           <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/15Sub.webp" style={{ maxHeight: '220px' }} />
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Gardener</Card.Title>
               <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$15 / month</Card.Subtitle>
@@ -130,6 +133,7 @@ const Pricing = () => (
         </Col>
         <Col md={4}>
           <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/30sub.jpg" style={{ maxHeight: '220px' }} />
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Tree Hugger</Card.Title>
               <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$30 / month</Card.Subtitle>
