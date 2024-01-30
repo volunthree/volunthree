@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap';
 
 /** Returns the Pricing page to the Voluntree website. */
 const Pricing = () => (
@@ -27,35 +27,156 @@ const Pricing = () => (
         <p>Contribute to a Non-Profit!</p>
       </div>
     </Container>
-    <Container style={{ paddingTop: '25px' }}>
-      <Row className="d-flex align-items-center justify-content-center">
-        <Col>
-          <div>
-            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Make a Donation</h1>
-            <p style={{ fontSize: '18px' }}>
-              Find an organization that you would like to donate too!
-              Millions of people across the Impact sector trust
-              VolunTree. Join us in ensuring all of America’s
-              communities are supported today, tomorrow, and for generations to come.
-            </p>
-          </div>
+    <Container fluid style={{ height: '100px', padding: '20px', margin: '20px' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1> Voluntree Membership Plans </h1>
+        <p>Choose the best plan for you and start making an impact today!</p>
+      </div>
+    </Container>
+    <Container fluid style={{ padding: '20px', margin: '20px' }}>
+      <Row
+        className="d-flex align-items-stretch"
+      >
+        <Col md={4}>
+          <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/0Sub.jpg" style={{ maxHeight: '220px' }} />
+            <Card.Body>
+              <Card.Title style={{ textAlign: 'center' }}>Volunteer</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$0 / month</Card.Subtitle>
+              <Card.Text>
+                <h5>Features: </h5>
+                <Form>
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to basic volunteering opportunities: This tier provides access to entry-level volunteer positions within the organization's network."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Volunteer training resources: Members at this level can access training materials and resources to enhance their volunteering skills and knowledge."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to premium volunteering opportunities: Members at this level gain access to more specialized or high-impact volunteer roles within the organization."
+                    disabled
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    disabled
+                    label="Volunteer recognition program: Subscribers are enrolled in a volunteer recognition program that acknowledges and rewards their contributions, potentially including certificates, badges, or other forms of recognition."
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    disabled
+                    label="Exclusive volunteer events: Members at this tier gain invitations to exclusive volunteer appreciation events, networking opportunities, or special volunteer projects."
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    disabled
+                    label="Priority support: Subscribers receive priority assistance and support from the organization's staff for any inquiries, issues, or requests related to volunteering."
+                  />
+                </Form>
+              </Card.Text>
+              <div className="text-center">
+                <Button variant="primary">Subscribe as Volunteer</Button>
+              </div>
+            </Card.Body>
+          </Card>
         </Col>
-        <Col lg={5} style={{ paddingLeft: '30px' }}>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
+        <Col md={4}>
+          <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/15Sub.webp" style={{ maxHeight: '220px' }} />
+            <Card.Body>
+              <Card.Title style={{ textAlign: 'center' }}>Gardener</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$15 / month</Card.Subtitle>
+              <Card.Text>
+                <h5>Features: </h5>
+                <Form>
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to basic volunteering opportunities: This tier provides access to entry-level volunteer positions within the organization's network."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Volunteer training resources: Members at this level can access training materials and resources to enhance their volunteering skills and knowledge."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to premium volunteering opportunities: Members at this level gain access to more specialized or high-impact volunteer roles within the organization."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Volunteer recognition program: Subscribers are enrolled in a volunteer recognition program that acknowledges and rewards their contributions, potentially including certificates, badges, or other forms of recognition."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    disabled
+                    label="Exclusive volunteer events: Members at this tier gain invitations to exclusive volunteer appreciation events, networking opportunities, or special volunteer projects."
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    disabled
+                    label="Priority support: Subscribers receive priority assistance and support from the organization's staff for any inquiries, issues, or requests related to volunteering."
+                  />
+                </Form>
+              </Card.Text>
+              <div className="text-center">
+                <Button variant="primary">Subscribe as Gardener</Button>
+              </div>
+            </Card.Body>
+          </Card>
         </Col>
-      </Row>
-      <Row style={{ paddingTop: '25px' }} className="d-flex align-items-center justify-content-center">
-        <Col>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
-        </Col>
-        <Col style={{ paddingLeft: '30px' }}>
-          <div>
-            <h1 style={{ textAlign: 'center', paddingBottom: '10px' }}>Become a Sponsor</h1>
-            <p style={{ fontSize: '18px' }}>
-              Regardless of who you are trying to activate into service or where you need to reach them, we have products, services,
-              and partnership opportunities designed to magnify your impact—all powered by the immense value of our Open Network.
-            </p>
-          </div>
+        <Col md={4}>
+          <Card className="mb-4 pricing-card">
+            <Card.Img variant="top" src="/images/30sub.jpg" style={{ maxHeight: '220px' }} />
+            <Card.Body>
+              <Card.Title style={{ textAlign: 'center' }}>Tree Hugger</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted" style={{ textAlign: 'center' }}>$30 / month</Card.Subtitle>
+              <Card.Text>
+                <h5>Features: </h5>
+                <Form>
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to basic volunteering opportunities: This tier provides access to entry-level volunteer positions within the organization's network."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Volunteer training resources: Members at this level can access training materials and resources to enhance their volunteering skills and knowledge."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Access to premium volunteering opportunities: Members at this level gain access to more specialized or high-impact volunteer roles within the organization."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Volunteer recognition program: Subscribers are enrolled in a volunteer recognition program that acknowledges and rewards their contributions, potentially including certificates, badges, or other forms of recognition."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Exclusive volunteer events: Members at this tier gain invitations to exclusive volunteer appreciation events, networking opportunities, or special volunteer projects."
+                    checked
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    label="Priority support: Subscribers receive priority assistance and support from the organization's staff for any inquiries, issues, or requests related to volunteering."
+                    checked
+                  />
+                </Form>
+              </Card.Text>
+              <div className="text-center">
+                <Button variant="primary">Subscribe as Tree Hugger</Button>
+              </div>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
