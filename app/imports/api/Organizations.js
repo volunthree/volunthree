@@ -17,7 +17,7 @@ class OrganizationCollection {
       owner: String,
       description: String,
       location: String,
-      pictureURL: {           // @todo, perhaps think of implementing picture upload instead of URL.
+      pictureURL: { // @todo, perhaps think of implementing picture upload instead of URL.
         type: String,
         defaultValue: '/images/Missing.png',
         required: false,

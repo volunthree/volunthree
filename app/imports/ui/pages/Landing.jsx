@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { PAGE_IDS } from '../utilities/PageIDs';
 
 /** Returns the homepage to the Voluntree website. */
 const Landing = () => (
@@ -8,7 +9,7 @@ const Landing = () => (
   // TODO: Make this into a carousel later?
   <Container
     fluid
-    id="landing-page"
+    id={PAGE_IDS.LANDING}
     style={{ padding: 0 }}
   >
     <Container
@@ -41,7 +42,7 @@ const Landing = () => (
               <img src="/images/discover.png" alt="Search Info" style={{ maxHeight: 128 }} />
               <h3>Discover</h3>
               <p>Discover new opportunities to volunteer and make an impact. Search through our vast array of volunteering opportunities that you can participate in!</p>
-              <Button variant="outline-primary" as={NavLink} to="/"> Find Volunteering Opportunities </Button>
+              <Button variant="outline-primary" as={NavLink} to="/volunteer-opportunities"> Find Volunteering Opportunities </Button>
             </div>
           </div>
         </Col>
@@ -85,7 +86,7 @@ const Landing = () => (
               and contribute to meaningful causes, all while connecting with like-minded individuals who share your passion. With The Voluntree, you can streamline your volunteer journey, expand your network,
               and amplify your impact, all in one place. Soon, you can join us in building a stronger, more connected community through the power of volunteering.
             </p>
-            <Button variant="success" as={NavLink} to="/"> Learn More about Voluntree </Button>
+            <Button variant="success" as={NavLink} to="/aboutus"> Learn More about Voluntree </Button>
           </div>
         </Col>
       </Row>
