@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { PAGE_IDS } from '../utilities/PageIDs';
 
 const VolunteerList = () => {
   const tempEvents = [
@@ -15,7 +16,7 @@ const VolunteerList = () => {
 
   ];
   return (
-    <Container>
+    <Container id={PAGE_IDS.VOLUNTEER_OPPORTUNITIES}>
       <Col className="text-center">
         <h2>Volunteering Opportunities</h2>
       </Col>
