@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap';
+import { PAGE_IDS } from '../utilities/PageIDs';
 
 /** Returns the Pricing page to the Voluntree website. */
 const Pricing = () => (
 
   <Container
+    id={PAGE_IDS.PRICING}
     fluid
     style={{ padding: 0 }}
   >

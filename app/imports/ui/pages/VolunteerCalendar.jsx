@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Dropdown, Col, Container, Row } from 'react-bootstrap';
 import BigEventCalendar from '../components/BigEventCalendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { PAGE_IDS } from '../utilities/PageIDs';
 
 const VolunteerCalendar = () => {
   const [selectedOrganization, setSelectedOrganization] = useState(null);
@@ -17,7 +18,7 @@ const VolunteerCalendar = () => {
   };
 
   return (
-    <Container style={{ marginTop: '20px', marginBottom: '40px' }}>
+    <Container id={PAGE_IDS.VOLUNTEER_CALENDAR} style={{ marginTop: '20px', marginBottom: '40px' }}>
       <Row>
         <Col>
           <h1>Volunteering Calendar</h1>

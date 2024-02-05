@@ -21,6 +21,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
+import Report from '../pages/Report';
 import Pricing from '../pages/Pricing';
 import VolunteerCalendar from '../pages/VolunteerCalendar';
 import Forgot from '../pages/Forgot';
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/report" element={<Report />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
