@@ -19,8 +19,12 @@ import NotAuthorized from '../pages/NotAuthorized';
 import { ROLE } from '../../api/role/Role';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ManageDatabase from '../pages/ManageDatabase';
+import VolunteerList from '../pages/VolunteerList';
 import AboutUs from '../pages/AboutUs';
 import Report from '../pages/Report';
+import Pricing from '../pages/Pricing';
+import VolunteerCalendar from '../pages/VolunteerCalendar';
+import Forgot from '../pages/Forgot';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -47,7 +51,11 @@ const App = () => {
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/manage-database" element={<AdminProtectedRoute ready={ready}><ManageDatabase /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
+          <Route path="/volunteer-opportunities" element={<VolunteerList />} />
+          <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/forgot" element={<Forgot />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
