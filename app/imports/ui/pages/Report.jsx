@@ -44,7 +44,7 @@ const Report = () => (
         <Row>
           <Col>
             <p style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
-              <span style={{fontWeight: 'bold' }}> Student Status: </span> (Full/Part)-time
+              <span style={{ fontWeight: 'bold' }}> Student Status: </span> (Full/Part)-time
             </p>
           </Col>
         </Row>
@@ -63,37 +63,39 @@ const Report = () => (
           </Col>
         </Row>
 
-        <Container className="border border-3" style={{
-          width: '95%',
-          borderRadius: '20px',
-          backgroundColor: '#f2faf9',
-        }}
+        <Container
+          className="border border-3"
+          style={{
+            width: '95%',
+            borderRadius: '20px',
+            backgroundColor: '#f2faf9',
+          }}
         >
           <Row className="pt-4 pb-2">
-          <Col className="text-center" md={6}>
-            <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Work Preference in 20XX </h>
-          </Col>
-          <Col className ="text-center" md={6}>
-            <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Hours Worked in 20XX </h>
-          </Col>
-        </Row>
-        <Row className="p-3">
-          <Col md={6}>
-            <div className="mx-auto" style={{ maxWidth: '75%' }}>
-              <PieChart />
-            </div>
-          </Col>
-          <Col md={6}>
-            <div className="mx-auto">
-              <BarChart />
-            </div>
-          </Col>
-        </Row>
-        <Row className="justify-content-center pt-5 pb-4">
-          <Col className="text-center">
-            <Button> Print Report </Button>
-          </Col>
-        </Row>
+            <Col className="text-center" md={6}>
+              <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Work Preference in 20XX </h>
+            </Col>
+            <Col className="text-center" md={6}>
+              <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Hours Worked in 20XX </h>
+            </Col>
+          </Row>
+          <Row className="p-3">
+            <Col md={6}>
+              <div className="mx-auto" style={{ maxWidth: '75%' }}>
+                <PieChart />
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="mx-auto">
+                <BarChart />
+              </div>
+            </Col>
+          </Row>
+          <Row className="justify-content-center pt-5 pb-4">
+            <Col className="text-center">
+              <Button> Print Report </Button>
+            </Col>
+          </Row>
         </Container>
       </Container>
     </Container>
