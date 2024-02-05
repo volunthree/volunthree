@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import PieChart from '../components/PieChart';
 import BarChart from '../components/BarChart';
 
@@ -30,18 +30,15 @@ const Report = () => (
       </div>
     </Container>
 
-    <Container fluid className="d-flex vh-100" style={{ padding: '35px', backgroundColor: '#eefaca' }}>
+    <Container fluid style={{ padding: '35px', backgroundColor: '#eefaca' }}>
       <Container
-        className="d-flex flex-column border border-5 border-secondary"
+        className="d-flex flex-column border border-4 border-secondary pb-4"
         style={{
           minHeight: '100%',
           width: '100%',
           borderRadius: '20px',
           backgroundColor: 'white',
           padding: '10px',
-          position: 'relative',
-          overflow: 'auto'
-
         }}
       >
         <Row>
@@ -58,25 +55,46 @@ const Report = () => (
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row className="pb-3">
           <Col>
-            <p style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
+            <h style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
               <span style={{ fontWeight: 'bold' }}> Volunteer Hours: </span> 30
-            </p>
+            </h>
           </Col>
         </Row>
-        <Row className="border border-5">
+
+        <Container className="border border-3" style={{
+          width: '95%',
+          borderRadius: '20px',
+          backgroundColor: '#f2faf9',
+        }}
+        >
+          <Row className="pt-4 pb-2">
+          <Col className="text-center" md={6}>
+            <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Work Preference in 20XX </h>
+          </Col>
+          <Col className ="text-center" md={6}>
+            <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Hours Worked in 20XX </h>
+          </Col>
+        </Row>
+        <Row className="p-3">
           <Col md={6}>
-            <div className="justify-content-center" style={{ maxWidth: '100%' }}>
-              <PieChart/>
+            <div className="mx-auto" style={{ maxWidth: '75%' }}>
+              <PieChart />
             </div>
           </Col>
           <Col md={6}>
-            <BarChart />
+            <div className="mx-auto">
+              <BarChart />
+            </div>
           </Col>
         </Row>
-
-
+        <Row className="justify-content-center pt-5 pb-4">
+          <Col className="text-center">
+            <Button> Print Report </Button>
+          </Col>
+        </Row>
+        </Container>
       </Container>
     </Container>
   </Container>
