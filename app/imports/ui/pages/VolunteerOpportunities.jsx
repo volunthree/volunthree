@@ -3,7 +3,7 @@ import { Row, Container, Col, Form, Dropdown, Pagination } from 'react-bootstrap
 import { PAGE_IDS } from '../utilities/PageIDs';
 import Opportunity from '../components/Opportunity';
 
-const VolunteerList = () => {
+const VolunteerOpportunities = () => {
   // Defines dummy data that will be used in the data mapping. Must be replaced by actual data later.
   const tempOpportunities = [
     {
@@ -152,4 +152,4 @@ const VolunteerList = () => {
   );
 };
 
-export default VolunteerList;
+export default VolunteerOpportunities;
