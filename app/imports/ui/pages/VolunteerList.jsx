@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Container, Col, Form } from 'react-bootstrap';
+import { Row, Container, Col, Form, Dropdown, Pagination } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import Opportunity from '../components/Opportunity';
 
@@ -7,74 +7,67 @@ const VolunteerList = () => {
   // Defines dummy data that will be used in the data mapping. Must be replaced by actual data later.
   const tempOpportunities = [
     {
-      name: 'Opportunity 1',
-      size: 50,
-      location: 'New York',
-      organization: 'Organization A',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
-    },
-    {
       name: 'Community Clean-Up Day',
       size: 20,
       location: 'City Park, Springfield',
       organization: 'Green Earth Initiative',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/ccday.jpg',
     },
     {
       name: 'Food Drive at Local Shelter',
       size: 15,
       location: '123 Main Street, Anytown',
       organization: 'Helping Hands Foundation',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/fooddrive.jpg',
     },
     {
       name: 'Tutoring Program for Underprivileged Youth',
       size: 10,
       location: 'Urban Youth Center, Downtown',
       organization: 'Brighter Futures Association',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/tutoringprog.jpg',
     },
     {
       name: 'Elderly Care and Companionship',
       size: 8,
       location: 'Sunny Days Retirement Home',
       organization: 'Caring Hearts Community',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/elderlycare.jpg',
     },
     {
       name: 'Environmental Conservation Expedition',
       size: 12,
       location: 'National Forest, Mountainville',
       organization: 'Wilderness Preservation Society',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/enviromentalcons.jpg',
     },
     {
       name: 'Animal Shelter Volunteer Day',
       size: 25,
       location: 'Sunset Animal Shelter, Riverdale',
       organization: 'Paws for Hope Rescue',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/animalvolun.jpg',
     },
     {
       name: 'Habitat Restoration Project',
       size: 30,
       location: 'Local Wetlands Preserve, Willow Creek',
       organization: 'Nature Conservancy',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/habitatrestore.jpg',
     },
     {
       name: 'Homeless Outreach Program',
       size: 20,
       location: 'Downtown Homeless Shelter, Beacon City',
       organization: 'Hope in Humanity',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/homelessoutreach.jpg',
     },
     {
       name: 'Community Garden Maintenance',
       size: 15,
       location: 'City Community Garden, Bloomington',
       organization: 'Green Thumb Coalition',
-      pictureURL: '/images/aboutPlaceHolder1.jpg',
+      pictureURL: '/images/opportunities/commgarden.jpg',
     },
   ];
 
@@ -101,10 +94,33 @@ const VolunteerList = () => {
       </Container>
       <Container style={{ padding: 20 }}>
         <h6>Filter By:</h6>
-        <Row style={{ padding: 10, justifyContent: 'center' }}>
-          <Col style={{ alignContent: 'center' }} md={3}> Filter 1 </Col>
-          <Col style={{ alignContent: 'center' }} md={3}> Filter 2 </Col>
-          <Col style={{ alignContent: 'center' }} md={3}> Filter 3 </Col>
+        <Row style={{ padding: 10, alignContent: 'center' }}>
+          <Col style={{ alignContent: 'center' }}>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Filter by Organization
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                {tempOpportunities.map((x) => (
+                  <Dropdown.Item>{x.organization}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+          <Col style={{ alignContent: 'center' }}>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Filter by Location
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                {tempOpportunities.map((x) => (
+                  <Dropdown.Item>{x.location}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
         </Row>
       </Container>
       <Container>
@@ -120,6 +136,17 @@ const VolunteerList = () => {
             </Col>
           ))}
         </Row>
+      </Container>
+      <Container fluid style={{ display: 'flex', justifyContent: 'center' }}>
+        <Pagination>
+          <Pagination.First />
+          <Pagination.Item active>{1}</Pagination.Item>
+          <Pagination.Item>{2}</Pagination.Item>
+          <Pagination.Item>{3}</Pagination.Item>
+          <Pagination.Ellipsis />
+          <Pagination.Next />
+          <Pagination.Last />
+        </Pagination>
       </Container>
     </Container>
   );
