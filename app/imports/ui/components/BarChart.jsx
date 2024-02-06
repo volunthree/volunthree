@@ -1,7 +1,6 @@
 import React from 'react';
 import 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
-import { Container, Row, Col } from 'react-bootstrap';
 
 /** Bar chart appears on User Report page. Rendered by Report page. */
 const BarChart = () => {
@@ -16,7 +15,7 @@ const BarChart = () => {
   };
 
   return (
-          <Bar data={data} />
+    <Bar data={data} />
   );
 };
 

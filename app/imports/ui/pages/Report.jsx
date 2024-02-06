@@ -26,6 +26,7 @@ const Report = () => (
       }}
     >
       <div>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <h1> Name's Report </h1>
       </div>
     </Container>
