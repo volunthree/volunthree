@@ -21,6 +21,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerOpportunities from '../pages/VolunteerOpportunities';
 import AboutUs from '../pages/AboutUs';
+import VolunteerEvent from '../pages/VolunteerEvent';
 import Report from '../pages/Report';
 import Pricing from '../pages/Pricing';
 import VolunteerCalendar from '../pages/VolunteerCalendar';
@@ -54,8 +55,10 @@ const App = () => {
           <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
           <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/forgot" element={<Forgot />} />
+          <Route path="/volunteer-event" element={<VolunteerEvent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
