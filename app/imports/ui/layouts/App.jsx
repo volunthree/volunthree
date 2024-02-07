@@ -25,6 +25,7 @@ import VolunteerEvent from '../pages/VolunteerEvent';
 import Report from '../pages/Report';
 import Pricing from '../pages/Pricing';
 import VolunteerCalendar from '../pages/VolunteerCalendar';
+import ForgotChange from '../pages/ForgotChange';
 import Forgot from '../pages/Forgot';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/volunteer-event" element={<VolunteerEvent />} />
           <Route path="*" element={<NotFound />} />
