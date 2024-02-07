@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-import randomUID from 'utilities/randomID';
+import randomUID from 'app/imports/api/utilities/randomID';
 
 /**
  * The OrganizationCollection. It is the collection of non-profit or volunteer organizations.
