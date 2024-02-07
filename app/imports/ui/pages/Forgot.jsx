@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Form, Row, Button, Card } from 'react-bootstrap';
 
+/** A page where user's can input their account email to change their username/password */
 const Forgot = () => (
   <div className="box" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/forgotTree.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', height: '80vh', margin: '0px' }}>
     <Row>
