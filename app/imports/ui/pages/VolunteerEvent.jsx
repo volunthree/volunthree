@@ -1,53 +1,85 @@
 import React from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
-import { useTracker } from 'meteor/react-meteor-data';
-import { Stuffs } from '../../api/stuff/StuffCollection';
-import StuffItem from '../components/StuffItem';
-import LoadingSpinner from '../components/LoadingSpinner';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
-import { Card}
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-const VolunteerEvent = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, stuffs } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
-    const subscription = Stuffs.subscribeStuff();
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Stuff documents
-    const stuffItems = Stuffs.find({}, { sort: { name: 1 } }).fetch();
-    return {
-      stuffs: stuffItems,
-      ready: rdy,
-    };
-  }, []);
-  return (ready ? (
-    <Container id={PAGE_IDS.LIST_STUFF} className="py-3">
-      <Row className="justify-content-center">
-        <Col md={7}>
-          <Col className="text-center">
-            <h2>List Stuff</h2>
-          </Col>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Condition</th>
-                <th>Edit</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-            </tbody>
-          </Table>
+const VolunteerEvent = () => (
+  <Container
+    fluid
+    id={PAGE_IDS.LANDING}
+    style={{ padding: 0 }}
+  >
+    <Container fluid style={{ padding: 20, margin: '50px' }}>
+      <Row>
+        <Col md={4} className="text-center shadow">
+          <img src="/images/forgotTree.jpg" alt="Logo" style={{ padding: 20, maxWidth: '300px' }} />
+          <div>
+            <h1>
+              ORGANIZATION
+            </h1>
+            <p>
+              Website.org
+            </p>
+            <h3>
+              Date posted:
+            </h3>
+            <p>
+              January 1, 2024
+            </p>
+            <h3>
+              Where:
+            </h3>
+            <p>
+              Location
+            </p>
+            <h3>
+              When:
+            </h3>
+            <p>
+              Date
+            </p>
+            <h3>
+              Skills:
+            </h3>
+            <p>
+              Skills here
+            </p>
+            <Button variant="outline-secondary" as={NavLink} to="/volunteer-opportunities"> Back to Search </Button>
+          </div>
+        </Col>
+        <Col md={6} style={{ padding: 50 }}>
+          <div>
+            <h1>
+              NAME OF VOLUNTEERING EVENT
+            </h1>
+            <Row style={{ marginTop: 40 }}>
+              <Col md={2}>
+                <Button variant="outline-success" as={NavLink}> Volunteer </Button>
+              </Col>
+              <Col>
+                <Button variant="outline-secondary" as={NavLink}> Share </Button>
+              </Col>
+            </Row>
+            <div style={{ marginTop: 40 }}>
+              This organization does a lot of things like lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Enim neque volutpat ac tincidunt. Vitae semper quis lectus nulla at volutpat diam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Ipsum dolor sit amet consectetur adipiscing elit duis tristique.
+              Arcu ac tortor dignissim convallis. Sed faucibus turpis in eu. Elit ullamcorper dignissim cras tincidunt lobortis. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. Urna id volutpat lacus laoreet non curabitur.
+              met facilisis magna etiam tempor orci eu lobortis. Leo duis ut diam quam nulla porttitor massa. Egestas sed tempus urna et pharetra pharetra.
+              Dui sapien eget mi proin sed libero enim. Sit amet dictum sit amet justo donec enim. Massa sed elementum tempus egestas sed sed risus pretium.
+            </div>
+            <h1 style={{ marginTop: 40 }}>
+              ABOUT ORGANIZATION
+            </h1>
+            <div style={{ marginTop: 40 }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Enim neque volutpat ac tincidunt. Vitae semper quis lectus nulla at volutpat diam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Ipsum dolor sit amet consectetur adipiscing elit duis tristique.
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner message="Loading Stuff" />);
-};
+  </Container>
+);
 
 export default VolunteerEvent;
