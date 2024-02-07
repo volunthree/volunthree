@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 /** Renders a horizontal card of a Volunteer Opportunity. */
 // TODO: Change this into whatever the actual opportunity structure is definted as
 const Opportunity = ({ opp }) => (
-  <Card style={{ width: '100%', marginBottom: '20px' }}>
+  <Card style={{ width: '100%', marginBottom: '20px', textDecoration: 'none' }} as={NavLink} to="/volunteer-event">
     <div style={{ display: 'flex' }}>
       <div style={{ flex: '75%' }}>
         <Card.Body>
