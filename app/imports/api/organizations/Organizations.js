@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import randomUID from 'app/imports/api/utilities/randomID';
 
 /**
  * The OrganizationCollection. It is the collection of non-profit or volunteer organizations.
@@ -13,6 +14,7 @@ class OrganizationCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
+      permanentID: String,
       orgName: String,
       owner: String,
       description: String,
