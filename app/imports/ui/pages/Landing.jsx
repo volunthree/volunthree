@@ -32,39 +32,25 @@ const Landing = () => (
         <p>Volunteering Simplified. Impact Amplified.</p>
       </div>
     </Container>
-    <Container fluid style={{ paddingTop: '20px', margin: '20px' }}>
-      <Row
-        className="d-flex align-items-stretch"
-      >
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/discover.png" alt="Search Info" style={{ maxHeight: 128 }} />
-              <h3>Discover</h3>
-              <p>Discover new opportunities to volunteer and make an impact. Search through our vast array of volunteering opportunities that you can participate in!</p>
-              <Button variant="outline-primary" as={NavLink} to="/volunteer-opportunities"> Find Volunteering Opportunities </Button>
-            </div>
-          </div>
+    <Container fluid style={{ paddingTop: '20px', margin: '20px', justifyContent: 'center', paddingLeft: '5rem', paddingRight: '5rem' }}>
+      <Row className="d-flex shadow align-items-center">
+        <Col xs={12} md={8} className="text-center" style={{ padding: '2.5rem' }}>
+          <h2>Discover Volunteer Opportunities</h2>
+          <p>
+            Discover new opportunities to volunteer and make an impact. Search through our vast array of volunteering
+            opportunities and organizations that you can participate in! Commit to a cause and connect with like-minded individuals.
+          </p>
+          <Row className="d-flex text-center">
+            <Col style={{ maxWidth: 550 }}>
+              <Button variant="outline-primary" as={NavLink} to="/volunteer-opportunities" style={{ paddingLeft: '5px' }}> Find Volunteering Opportunities </Button>
+            </Col>
+            <Col style={{ maxWidth: 650 }}>
+              <Button variant="outline-primary" as={NavLink} to="/"> Look through Volunteering Organizations </Button>
+            </Col>
+          </Row>
         </Col>
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/commit.webp" alt="Commit Clipboard" style={{ maxHeight: 128 }} />
-              <h3>Commit</h3>
-              <p>Commit to a cause and connect with like-minded individuals. Find out organizations that are actively helping the causes that YOU care about!</p>
-              <Button variant="outline-success" as={NavLink} to="/"> Look through Volunteering Organizations </Button>
-            </div>
-          </div>
-        </Col>
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/change.png" alt="Earth Icon" style={{ maxHeight: 128 }} />
-              <h3>Change</h3>
-              <p>Change the world and your community! Voluntree creates a detailed report showing you your contributions to the community!</p>
-              <Button variant="outline-dark" as={NavLink} to="/"> View Our Impact </Button>
-            </div>
-          </div>
+        <Col xs={12} md={4} className="d-flex align-content-center justify-content-center">
+          <img src="/images/discover.png" alt="Search Info" style={{ maxHeight: 180 }} />
         </Col>
       </Row>
     </Container>
