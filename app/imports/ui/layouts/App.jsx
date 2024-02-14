@@ -7,14 +7,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
-import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
-import { ROLE } from '../../api/role/Role';
-import LoadingSpinner from '../components/LoadingSpinner';
-import ManageDatabase from '../pages/ManageDatabase';
 import VolunteerOpportunities from '../pages/VolunteerOpportunities';
 import AboutUs from '../pages/AboutUs';
 import VolunteerEvent from '../pages/VolunteerEvent';
@@ -23,6 +19,7 @@ import Pricing from '../pages/Pricing';
 import VolunteerCalendar from '../pages/VolunteerCalendar';
 import ForgotChange from '../pages/ForgotChange';
 import Forgot from '../pages/Forgot';
+import SignUp from '../pages/SignUp';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -39,11 +36,10 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/report" element={<Report />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/manage-database" element={<AdminProtectedRoute ready={ready}><ManageDatabase /></AdminProtectedRoute>} />
+          <Route path="/home" element={<Landing />} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
           <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
@@ -66,6 +62,7 @@ const App = () => {
  * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
+
 const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
   console.log('ProtectedRoute', isLogged);
@@ -77,6 +74,8 @@ const ProtectedRoute = ({ children }) => {
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
+
+/*
 const AdminProtectedRoute = ({ ready, children }) => {
   const isLogged = Meteor.userId() !== null;
   if (!isLogged) {
@@ -109,5 +108,7 @@ AdminProtectedRoute.defaultProps = {
   ready: false,
   children: <Landing />,
 };
+
+*/
 
 export default App;
