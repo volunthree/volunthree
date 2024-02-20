@@ -44,12 +44,12 @@ const AboutUs = () => (
           </div>
         </Col>
         <Col lg={5} style={{ paddingLeft: '30px' }}>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
+          <img src="/images/aboutus1.jpg" alt="Placeholder" style={{ maxWidth: '400px' }} />
         </Col>
       </Row>
       <Row style={{ paddingTop: '25px' }} className="d-flex align-items-center justify-content-center">
         <Col>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
+          <img src="/images/aboutus2.jpg" alt="Placeholder" style={{ maxWidth: '400px' }} />
         </Col>
         <Col style={{ paddingLeft: '30px' }}>
           <div>
