@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import { tempOpportunities, tempOrganizations } from '../utilities/LocalVariables';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/* Renders a page describing an event from the database of Volunteering events. Allows the user to see info on both the event and organization */
 const VolunteerEvent = () => {
   // TODO: Fix the routing getting to this page from anywhere in the application such that it uses the id to access data.
   const opportunityID = useLocation().state.id;
@@ -20,7 +20,7 @@ const VolunteerEvent = () => {
       <Container fluid style={{ padding: 20, margin: '50px', alignContent: 'center' }}>
         <Row>
           <Col md={4} className="text-center shadow">
-            <img src={organization.orgImage} alt="Logo" style={{ padding: 20, maxWidth: '250px' }} />
+            <img src={organization.orgImage} alt="Logo" style={{ padding: 20, maxWidth: '200px' }} />
             <div style={{ marginBottom: 20 }}>
               <h1>
                 {organization.organizationName}
@@ -60,7 +60,8 @@ const VolunteerEvent = () => {
               <h1>
                 {event.name}
               </h1>
-              <img src={event.pictureURL} alt="eventImage" style={{ padding: 2, maxWidth: '500px' }} />
+              <img src={event.pictureURL} alt="eventImage" style={{ padding: 3, maxWidth: '500px' }} />
+              <h6>Join {event.size} other volunteers!</h6>
               <Row style={{ marginTop: 10 }}>
                 <Col md={2}>
                   <Button variant="outline-success"> Volunteer </Button>
