@@ -60,7 +60,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/volunteer-event" element={<VolunteerEvent />} />
+          <Route path="/volunteer-event/:_id" element={<VolunteerEvent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
