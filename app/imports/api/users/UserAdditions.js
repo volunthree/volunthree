@@ -16,8 +16,16 @@ class UserAdditionsCollection {
       email: String, // This is what links it to the user as email must be unique and cannot be changed.
       firstName: String,
       lastName: String,
-      description: String,
-      location: String,
+      description: {
+        type: String,
+        defaultValue: '',
+        required: false,
+      },
+      location: {
+        type: String,
+        defaultValue: '',
+        required: false,
+      },
       pictureURL: { // @todo, perhaps think of implementing picture upload instead of URL.
         type: String,
         defaultValue: '/images/Missing.png',
@@ -31,8 +39,6 @@ class UserAdditionsCollection {
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }
-
-// @todo add crud methods for this collection.
 
 /**
  * The singleton instance of the UserAdditionsCollection.

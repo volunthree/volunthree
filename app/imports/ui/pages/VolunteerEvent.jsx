@@ -3,8 +3,9 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Returns a volunteer event page to the Voluntree website */
 const VolunteerEvent = () => (
+  // TODO: Update text/image to show information from collection
   <Container
     fluid
     id={PAGE_IDS.LANDING}
