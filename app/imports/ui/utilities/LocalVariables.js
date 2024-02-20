@@ -1,4 +1,4 @@
-/** TO DELETE WHEN DATABASE IS COMPLETE */
+/** TO DELETE WHEN DATABASE IS COMPLETE. CONTAINS DATA FOR BOTH OPPORTUNITIES AND ORGANIZATIONS. */
 
 export const tempOpportunities = [
   {
@@ -136,6 +136,7 @@ export const tempOrganizations = [
     organizationDescription: 'Green Earth Initiative is dedicated to promoting environmental conservation and sustainability in local communities. ' +
         'Through various initiatives such as community clean-up events and educational programs, we strive to inspire individuals to take action for a greener planet.',
     organizationWebsite: 'https://www.greenearthinitiative.org',
+    orgImage: '/images/organizations/gei.jpg',
   },
   {
     _id: 1,
@@ -143,6 +144,7 @@ export const tempOrganizations = [
     organizationDescription: 'Helping Hands Foundation is committed to providing essential support and resources to those in need within our community.' +
         ' From food drives to shelter assistance, we aim to make a positive impact on the lives of individuals facing hardship.',
     organizationWebsite: 'https://www.helpinghandsfoundation.org',
+    orgImage: '/images/organizations/hhf.jpg',
   },
   {
     _id: 2,
@@ -150,6 +152,7 @@ export const tempOrganizations = [
     organizationDescription: 'Brighter Futures Association is dedicated to empowering underprivileged youth through education and mentorship programs.' +
         ' Our goal is to provide them with the necessary tools and support to overcome obstacles and achieve their full potential.',
     organizationWebsite: 'https://www.brighterfuturesassociation.org',
+    orgImage: '/images/organizations/bfa.png',
   },
   {
     _id: 3,
@@ -157,6 +160,7 @@ export const tempOrganizations = [
     organizationDescription: 'Caring Hearts Community is committed to enhancing the quality of life for elderly individuals by providing compassionate care' +
         ' and companionship. Our team of volunteers works tirelessly to ensure that every senior receives the attention and support they deserve.',
     organizationWebsite: 'https://www.caringheartscommunity.org',
+    orgImage: '/images/organizations/chc.jfif',
   },
   {
     _id: 4,
@@ -164,6 +168,7 @@ export const tempOrganizations = [
     organizationDescription: 'Wilderness Preservation Society is dedicated to protecting and conserving natural habitats and wildlife across the globe. Through' +
         ' advocacy, research, and hands-on conservation efforts, we strive to safeguard the planet\'s biodiversity for future generations.',
     organizationWebsite: 'https://www.wildernesspreservation.org',
+    orgImage: '/images/organizations/wps.jpg',
   },
   {
     _id: 5,
@@ -171,6 +176,7 @@ export const tempOrganizations = [
     organizationDescription: 'Paws for Hope Rescue is committed to rescuing and rehoming abandoned and abused animals. Our dedicated team works tirelessly to provide' +
         ' medical care, rehabilitation, and loving homes for animals in need.',
     organizationWebsite: 'https://www.pawsforhoperescue.org',
+    orgImage: '/images/organizations/pfhr.jpg',
   },
   {
     _id: 6,
@@ -178,6 +184,7 @@ export const tempOrganizations = [
     organizationDescription: 'Nature Conservancy is a global environmental organization dedicated to conserving the lands and waters on which all life depends. Through' +
         ' innovative solutions and partnerships, we work to protect the planet\'s most important natural places.',
     organizationWebsite: 'https://www.natureconservancy.org',
+    orgImage: '/images/organizations/nc.jpg',
   },
   {
     _id: 7,
@@ -185,6 +192,7 @@ export const tempOrganizations = [
     organizationDescription: 'Hope in Humanity is committed to serving the homeless community by providing essential services and support. Through outreach programs and' +
         ' advocacy, we strive to create a brighter future for those experiencing homelessness.',
     organizationWebsite: 'https://www.hopeinhumanity.org',
+    orgImage: '/images/organizations/hih.jpg',
   },
   {
     _id: 8,
@@ -192,5 +200,6 @@ export const tempOrganizations = [
     organizationDescription: 'Green Thumb Coalition is dedicated to promoting urban gardening and sustainable food practices. Through community gardens and educational' +
         ' programs, we empower individuals to grow their own food and foster green spaces in cities.',
     organizationWebsite: 'https://www.greenthumbcoalition.org',
+    orgImage: '/images/organizations/gtc.png',
   },
 ];

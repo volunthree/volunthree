@@ -17,10 +17,10 @@ const VolunteerEvent = () => {
       id={PAGE_IDS.LANDING}
       style={{ padding: 0 }}
     >
-      <Container fluid style={{ padding: 20, margin: '50px' }}>
+      <Container fluid style={{ padding: 20, margin: '50px', alignContent: 'center' }}>
         <Row>
           <Col md={4} className="text-center shadow">
-            <img src={event.pictureURL} alt="Logo" style={{ padding: 20, maxWidth: '350px' }} />
+            <img src={organization.orgImage} alt="Logo" style={{ padding: 20, maxWidth: '250px' }} />
             <div style={{ marginBottom: 20 }}>
               <h1>
                 {organization.organizationName}
@@ -60,7 +60,8 @@ const VolunteerEvent = () => {
               <h1>
                 {event.name}
               </h1>
-              <Row style={{ marginTop: 40 }}>
+              <img src={event.pictureURL} alt="eventImage" style={{ padding: 2, maxWidth: '500px' }} />
+              <Row style={{ marginTop: 10 }}>
                 <Col md={2}>
                   <Button variant="outline-success"> Volunteer </Button>
                 </Col>
