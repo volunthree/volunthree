@@ -20,6 +20,7 @@ import VolunteerCalendar from '../pages/VolunteerCalendar';
 import ForgotChange from '../pages/ForgotChange';
 import Forgot from '../pages/Forgot';
 import SignUp from '../pages/SignUp';
+import DirectMessaging from '../pages/DirectMessaging';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/volunteer-event" element={<VolunteerEvent />} />
+          <Route path="/direct-messaging" element={<DirectMessaging />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
