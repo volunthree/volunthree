@@ -203,3 +203,36 @@ export const tempOrganizations = [
     orgImage: '/images/organizations/gtc.png',
   },
 ];
+
+export const tempSkills = [
+  {
+    firstName: 'Joshua',
+    lastName: 'Galeria',
+    technicalSkills: 'None',
+    softSkills: 'Communication',
+    interests: 'Climate',
+    experience: 'University Education',
+    languages: 'English',
+    preferredRoles: 'Volunteer',
+  },
+  {
+    firstName: 'James',
+    lastName: 'Lee',
+    technicalSkills: 'Excel',
+    softSkills: 'Team player',
+    interests: 'Ocean',
+    experience: 'University Education',
+    languages: 'English',
+    preferredRoles: 'Volunteer',
+  },
+  {
+    firstName: 'Wyatt',
+    lastName: 'Matson',
+    technicalSkills: 'None',
+    softSkills: 'Communication',
+    interests: 'Ocean',
+    experience: 'University Education',
+    languages: 'English',
+    preferredRoles: 'Volunteer',
+  },
+];
