@@ -1,96 +1,133 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Odometer from 'react-odometerjs';
+import { PAGE_IDS } from '../utilities/PageIDs';
+import 'odometer/themes/odometer-theme-car.css';
 
 /** Returns the homepage to the Voluntree website. */
-const Landing = () => (
-  // Currently this section is a static image with the Voluntree Text above it.
-  // TODO: Make this into a carousel later?
-  <Container
-    fluid
-    id="landing-page"
-    style={{ padding: 0 }}
-  >
+const Landing = () => {
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
+  return (
     <Container
       fluid
-      id="landing-image"
-      className="d-flex align-items-center justify-content-center"
-      style={{
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/headerImage.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '350px',
-        color: 'white',
-        textAlign: 'center',
-        overflowY: 'auto',
-        padding: 0,
-      }}
+      id={PAGE_IDS.LANDING}
+      style={{ padding: 0 }}
     >
-      <div>
-        <h1>TheVoluntree</h1>
-        <p>Volunteering Simplified. Impact Amplified.</p>
-      </div>
-    </Container>
-    <Container fluid style={{ paddingTop: '20px', margin: '20px' }}>
-      <Row
-        className="d-flex align-items-stretch"
-      >
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/discover.png" alt="Search Info" style={{ maxHeight: 128 }} />
-              <h3>Discover</h3>
-              <p>Discover new opportunities to volunteer and make an impact. Search through our vast array of volunteering opportunities that you can participate in!</p>
-              <Button variant="outline-primary" as={NavLink} to="/"> Find Volunteering Opportunities </Button>
-            </div>
-          </div>
-        </Col>
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/commit.webp" alt="Commit Clipboard" style={{ maxHeight: 128 }} />
-              <h3>Commit</h3>
-              <p>Commit to a cause and connect with like-minded individuals. Find out organizations that are actively helping the causes that YOU care about!</p>
-              <Button variant="outline-success" as={NavLink} to="/"> Look through Volunteering Organizations </Button>
-            </div>
-          </div>
-        </Col>
-        <Col md={4}>
-          <div className="text-center p-4 shadow h-100 d-flex flex-column justify-content-between">
-            <div>
-              <img src="/images/change.png" alt="Earth Icon" style={{ maxHeight: 128 }} />
-              <h3>Change</h3>
-              <p>Change the world and your community! Voluntree creates a detailed report showing you your contributions to the community!</p>
-              <Button variant="outline-dark" as={NavLink} to="/"> View Our Impact </Button>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-    <Container fluid style={{ padding: 20, margin: '20px' }}>
-      <Row
-        className="align-items-center"
+      <Container
+        fluid
+        id="landing-image"
+        className="d-flex align-items-center justify-content-center"
         style={{
-          height: '400px',
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/headerImage.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '350px',
+          color: 'white',
           textAlign: 'center',
+          overflowY: 'auto',
+          padding: 0,
         }}
       >
-        <Col md={5}>
-          <img src="/images/landingImage2.png" alt="People Volunteering" style={{ maxWidth: '95%', height: '100%' }} />
-        </Col>
-        <Col md={7}>
-          <div style={{ marginLeft: '40px', marginRight: '40px' }}>
-            <h2>What is The Voluntree?</h2>
-            <p>At The Voluntree, we believe in simplifying volunteering, fostering connections, and making an impact. Our platform empowers you to effortlessly discover, connect,
-              and contribute to meaningful causes, all while connecting with like-minded individuals who share your passion. With The Voluntree, you can streamline your volunteer journey, expand your network,
-              and amplify your impact, all in one place. Soon, you can join us in building a stronger, more connected community through the power of volunteering.
+        <div>
+          <h1>TheVoluntree</h1>
+          <p>Volunteering Simplified. Impact Amplified.</p>
+        </div>
+      </Container>
+      <Container fluid style={{ paddingTop: '20px', margin: '20px', justifyContent: 'center', paddingLeft: '5rem', paddingRight: '5rem' }}>
+        <Row className="d-flex shadow align-items-center">
+          <Col xs={12} md={8} className="text-center" style={{ padding: '2.5rem' }}>
+            <h2>Discover Volunteer Opportunities</h2>
+            <p>
+              Discover new opportunities to volunteer and make an impact. Search through our vast array of volunteering
+              opportunities and organizations that you can participate in! Commit to a cause and connect with like-minded individuals.
             </p>
-            <Button variant="success" as={NavLink} to="/"> Learn More about Voluntree </Button>
-          </div>
-        </Col>
-      </Row>
+            <Row className="d-flex text-center">
+              <Col style={{ maxWidth: 550 }}>
+                <Button className="text-center" variant="outline-primary" as={NavLink} to="/volunteer-opportunities" style={{ paddingLeft: '5px' }}> Find Volunteering Opportunities </Button>
+              </Col>
+              <Col style={{ maxWidth: 650 }}>
+                <Button variant="outline-primary" as={NavLink} to="/volunteer-organizations"> Look through Volunteering Organizations </Button>
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={12} md={4} className="d-flex align-content-center justify-content-center">
+            <img src="/images/discover.png" alt="Search Info" style={{ maxHeight: 180 }} />
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid style={{ padding: 10, margin: '20px' }}>
+        <Row
+          className="align-items-center"
+          style={{
+            height: '400px',
+            textAlign: 'center',
+          }}
+        >
+          <Col md={5}>
+            <Carousel fade>
+              <Carousel.Item interval={3000}>
+                <img src="/images/carousel1.png" alt="Group of People Planting Tree" style={{ maxWidth: '615px', maxHeight: '408px' }} />
+              </Carousel.Item>
+              <Carousel.Item interval={3000}>
+                <img src="/images/carousel2.jpg" alt="Volunteers at Shelter" style={{ maxWidth: '615px', maxHeight: '408px' }} />
+              </Carousel.Item>
+              <Carousel.Item interval={3000}>
+                <img src="/images/carousel3.jpg" alt="Woman Delivering food to Man" style={{ maxWidth: '615px', maxHeight: '408px' }} />
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+          <Col md={7}>
+            <div style={{ marginLeft: '40px', marginRight: '40px' }}>
+              <h2>What is The Voluntree?</h2>
+              <p>At The Voluntree, we believe in simplifying volunteering, fostering connections, and making an impact. Our platform empowers you to effortlessly discover, connect,
+                and contribute to meaningful causes, all while connecting with like-minded individuals who share your passion. With The Voluntree, you can streamline your volunteer journey, expand your network,
+                and amplify your impact, all in one place. Soon, you can join us in building a stronger, more connected community through the power of volunteering.
+              </p>
+              <Button variant="success" as={NavLink} to="/aboutus"> Learn More about Voluntree </Button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid style={{ paddingTop: '20px', paddingRight: '5rem', paddingLeft: '5rem', paddingBottom: '30px' }}>
+        <Row className="d-flex shadow align-items-center">
+          <Row fluid className="text-center" style={{ margin: '15px' }}>
+            <h1> Our Impact </h1>
+            <p> Here are some statistics of the impact that we have had on the community through our various organizations and opportunities. </p>
+          </Row>
+          <Row>
+            <Col className="text-center">
+              <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+              <h5 style={{ textDecoration: 'none' }}>Hours Served</h5>
+            </Col>
+            <Col className="text-center">
+              <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+              <h5>Persons Served</h5>
+            </Col>
+            <Col className="text-center">
+              <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+              <h5>Rides Shared</h5>
+            </Col>
+            <Col className="text-center">
+              <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+              <h5>Communities Changed</h5>
+            </Col>
+          </Row>
+          <Row fluid className=" justify-content-center" style={{ margin: '15px' }}>
+            {currentUser === '' ? (
+              <Button style={{ maxWidth: '250px' }} variant="outline-dark" as={NavLink} to="/signin"> Sign in to view your Impact! </Button>
+            ) : (
+              <Button style={{ maxWidth: '160px' }} variant="outline-dark" as={NavLink} to="/report"> View my Impact </Button>
+            )}
+          </Row>
+        </Row>
+      </Container>
     </Container>
-  </Container>
-);
+  );
+};
 
 export default Landing;
