@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { PAGE_IDS } from '../utilities/PageIDs';
 
 /** Returns the about us page to the Voluntree website. */
 const AboutUs = () => (
@@ -7,7 +8,7 @@ const AboutUs = () => (
   // TODO: Find actual pictures to use
   <Container
     fluid
-    id="about-us-page"
+    id={PAGE_IDS.ABOUT_US}
     style={{ padding: 0 }}
   >
     <Container
@@ -43,12 +44,12 @@ const AboutUs = () => (
           </div>
         </Col>
         <Col lg={5} style={{ paddingLeft: '30px' }}>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
+          <img src="/images/aboutus1.jpg" alt="Placeholder" style={{ maxWidth: '400px' }} />
         </Col>
       </Row>
       <Row style={{ paddingTop: '25px' }} className="d-flex align-items-center justify-content-center">
         <Col>
-          <img src="/images/aboutPlaceHolder1.jpg" alt="Placeholder" />
+          <img src="/images/aboutus2.jpg" alt="Placeholder" style={{ maxWidth: '400px' }} />
         </Col>
         <Col style={{ paddingLeft: '30px' }}>
           <div>

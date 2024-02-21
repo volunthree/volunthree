@@ -1,5 +1,6 @@
 /* Use Open Sans as the default sans serif font. */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+@import 'react-big-calendar/lib/sass/styles.scss';
 
 /* Set up some CSS variables to theme the application. */
 :root {
@@ -31,4 +32,9 @@ body {
 /* Footer has no bottom margin value */
 .custom-footer {
   margin-bottom: 20px;
+}
+
+/* Set the visuals of the Pricing page different from each other */
+.pricing-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

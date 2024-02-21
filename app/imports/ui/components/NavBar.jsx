@@ -29,9 +29,10 @@ const NavBar = () => {
         <Navbar.Collapse id={COMPONENT_IDS.NAVBAR_COLLAPSE}>
           <Nav className="me-auto justify-content-start">
             <Nav.Link id={COMPONENT_IDS.NAVBAR_ABOUT_US} as={NavLink} to="/aboutus" key="about-us">About Us</Nav.Link>
-            <NavDropdown title="Opportunities" id="volunteering-dropdown">
-              <NavDropdown.Item as={NavLink} to="/volunteer-opportunities">Volunteering Opportunities</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/volunteer-organizations"> Volunteering Organizations </NavDropdown.Item>
+            <NavDropdown title="Opportunities" id={COMPONENT_IDS.VOLUNTEER_DROPDOWN}>
+              <NavDropdown.Item id={COMPONENT_IDS.VOLUNTEER_DROPDOWN_OPPORTUNITIES} as={NavLink} to="/volunteer-opportunities">Volunteering Opportunities</NavDropdown.Item>
+              <NavDropdown.Item id={COMPONENT_IDS.VOLUNTEER_DROPDOWN_ORGANIZATIONS} as={NavLink} to="/volunteer-organizations"> Volunteering Organizations </NavDropdown.Item>
+              <NavDropdown.Item id={COMPONENT_IDS.VOLUNTEER_DROPDOWN_CALENDAR} as={NavLink} to="/volunteer-calendar"> Volunteer Calendar </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link id={COMPONENT_IDS.NAVBAR_PRICING} as={NavLink} to="/pricing" key="pricing">Pricing</Nav.Link>
             <Nav.Link id={COMPONENT_IDS.NAVBAR_FAQ} as={NavLink} to="/faq" key="faq">FAQ</Nav.Link>
@@ -44,8 +45,8 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id={COMPONENT_IDS.NAVBAR_CURRENT_USER} title={currentUser}>
-                <Nav.Link id={COMPONENT_IDS.NAVBAR_MY_PROFILE} as={NavLink} to="/profile/:_id" key="profile">View My Profile</Nav.Link>,
-                <Nav.Link id={COMPONENT_IDS.NAVBAR_MY_REPORTS} as={NavLink} to="/reports/:_id" key="report">My Reports</Nav.Link>,
+                <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_MY_PROFILE} as={NavLink} to="/profile/:_id" key="profile">View My Profile</NavDropdown.Item>
+                <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_MY_REPORTS} as={NavLink} to="/report" key="report">My Reports</NavDropdown.Item>
                 <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_SIGN_OUT} as={NavLink} to="/signout"><BoxArrowRight /> Sign out</NavDropdown.Item>
               </NavDropdown>
             )}

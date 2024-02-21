@@ -54,45 +54,42 @@ class NavBar {
     await t.click(`#${COMPONENT_IDS.NAVBAR_LOGIN_DROPDOWN_SIGN_UP}`);
   }
 
-  /* Go to the add stuff page. */
-  async gotoAddStuffPage() {
+  /* Go to the about us page. */
+  async gotoAboutUsPage() {
     const visible = await Selector(`#${COMPONENT_IDS.NAVBAR_COLLAPSE}`).visible;
     if (!visible) {
       await t.click('button.navbar-toggler');
     }
-    await t.expect(Selector(`#${COMPONENT_IDS.NAVBAR_CURRENT_USER}`).exists).ok();
-    await t.click(`#${COMPONENT_IDS.NAVBAR_ADD_STUFF}`);
+    await t.click(`#${COMPONENT_IDS.NAVBAR_ABOUT_US}`);
   }
 
-  /* Go to the list stuff page. */
-  async gotoListStuffPage() {
+  /* Go to the pricing page. */
+  async gotoPricingPage() {
     const visible = await Selector(`#${COMPONENT_IDS.NAVBAR_COLLAPSE}`).visible;
     if (!visible) {
       await t.click('button.navbar-toggler');
     }
-    await t.expect(Selector(`#${COMPONENT_IDS.NAVBAR_CURRENT_USER}`).exists).ok();
-    await t.click(`#${COMPONENT_IDS.NAVBAR_LIST_STUFF}`);
+    await t.click(`#${COMPONENT_IDS.NAVBAR_PRICING}`);
   }
 
-  /* Go to the list stuff admin page. */
-  async gotoListStuffAdminPage() {
+  /* Go to the volunteer opportunities page. */
+  async gotoVolunteerOpportunitiesPage() {
     const visible = await Selector(`#${COMPONENT_IDS.NAVBAR_COLLAPSE}`).visible;
     if (!visible) {
       await t.click('button.navbar-toggler');
     }
-    await t.expect(Selector(`#${COMPONENT_IDS.NAVBAR_CURRENT_USER}`).exists).ok();
-    await t.click(`#${COMPONENT_IDS.NAVBAR_LIST_STUFF_ADMIN}`);
+    await t.click(`#${COMPONENT_IDS.VOLUNTEER_DROPDOWN}`);
+    await t.click(`#${COMPONENT_IDS.VOLUNTEER_DROPDOWN_OPPORTUNITIES}`);
   }
 
-  /* Go to the manage database page. Must be adimin. */
-  async gotoManageDatabasePage() {
+  /* Go to the volunteer calendar page. */
+  async gotoVolunteerCalendarPage() {
     const visible = await Selector(`#${COMPONENT_IDS.NAVBAR_COLLAPSE}`).visible;
     if (!visible) {
       await t.click('button.navbar-toggler');
     }
-    await t.expect(Selector(`#${COMPONENT_IDS.NAVBAR_CURRENT_USER}`).exists).ok();
-    await t.click(`#${COMPONENT_IDS.NAVBAR_MANAGE_DROPDOWN}`);
-    await t.click(`#${COMPONENT_IDS.NAVBAR_MANAGE_DROPDOWN_DATABASE}`);
+    await t.click(`#${COMPONENT_IDS.VOLUNTEER_DROPDOWN}`);
+    await t.click(`#${COMPONENT_IDS.VOLUNTEER_DROPDOWN_CALENDAR}`);
   }
 }
 
