@@ -20,6 +20,7 @@ import VolunteerCalendar from '../pages/VolunteerCalendar';
 import ForgotChange from '../pages/ForgotChange';
 import Forgot from '../pages/Forgot';
 import SignUp from '../pages/SignUp';
+import VolunteerOrganizations from '../pages/VolunteerOrganizations';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -42,13 +43,14 @@ const App = () => {
           <Route path="/home" element={<Landing />} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/volunteer-opportunities" element={<VolunteerOpportunities />} />
+          <Route path="/volunteer-organizations" element={<VolunteerOrganizations />} />
           <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/volunteer-event" element={<VolunteerEvent />} />
+          <Route path="/volunteer-event/:_id" element={<VolunteerEvent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

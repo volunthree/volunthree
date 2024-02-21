@@ -1,86 +1,90 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
+import { tempOpportunities, tempOrganizations } from '../utilities/LocalVariables';
 
-/** Returns a volunteer event page to the Voluntree website */
-const VolunteerEvent = () => (
-  // TODO: Update text/image to show information from collection
-  <Container
-    fluid
-    id={PAGE_IDS.LANDING}
-    style={{ padding: 0 }}
-  >
-    <Container fluid style={{ padding: 20, margin: '50px' }}>
-      <Row>
-        <Col md={4} className="text-center shadow">
-          <img src="/images/forgotTree.jpg" alt="Logo" style={{ padding: 20, maxWidth: '300px' }} />
-          <div>
-            <h1>
-              ORGANIZATION
-            </h1>
-            <p>
-              Website.org
-            </p>
-            <h3>
-              Date posted:
-            </h3>
-            <p>
-              January 1, 2024
-            </p>
-            <h3>
-              Where:
-            </h3>
-            <p>
-              Location
-            </p>
-            <h3>
-              When:
-            </h3>
-            <p>
-              Date
-            </p>
-            <h3>
-              Skills:
-            </h3>
-            <p>
-              Skills here
-            </p>
-            <Button variant="outline-secondary" as={NavLink} to="/volunteer-opportunities"> Back to Search </Button>
-          </div>
-        </Col>
-        <Col md={6} style={{ padding: 50 }}>
-          <div>
-            <h1>
-              NAME OF VOLUNTEERING EVENT
-            </h1>
-            <Row style={{ marginTop: 40 }}>
-              <Col md={2}>
-                <Button variant="outline-success" as={NavLink}> Volunteer </Button>
-              </Col>
-              <Col>
-                <Button variant="outline-secondary" as={NavLink}> Share </Button>
-              </Col>
-            </Row>
-            <div style={{ marginTop: 40 }}>
-              This organization does a lot of things like lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Enim neque volutpat ac tincidunt. Vitae semper quis lectus nulla at volutpat diam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Ipsum dolor sit amet consectetur adipiscing elit duis tristique.
-              Arcu ac tortor dignissim convallis. Sed faucibus turpis in eu. Elit ullamcorper dignissim cras tincidunt lobortis. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. Urna id volutpat lacus laoreet non curabitur.
-              met facilisis magna etiam tempor orci eu lobortis. Leo duis ut diam quam nulla porttitor massa. Egestas sed tempus urna et pharetra pharetra.
-              Dui sapien eget mi proin sed libero enim. Sit amet dictum sit amet justo donec enim. Massa sed elementum tempus egestas sed sed risus pretium.
+/* Renders a page describing an event from the database of Volunteering events. Allows the user to see info on both the event and organization */
+const VolunteerEvent = () => {
+  // TODO: Fix the routing getting to this page from anywhere in the application such that it uses the id to access data.
+  const opportunityID = useLocation().state.id;
+  const event = tempOpportunities.find(opp => opp._id === opportunityID);
+  const organization = tempOrganizations.find(org => org.organizationName === event.organization);
+  // TODO: Fix the above code. It works until the context of the page access is broken.
+  return (
+    <Container
+      fluid
+      id={PAGE_IDS.LANDING}
+      style={{ padding: 0 }}
+    >
+      <Container fluid style={{ padding: 20, margin: '50px', alignContent: 'center' }}>
+        <Row>
+          <Col md={4} className="text-center shadow">
+            <img src={organization.orgImage} alt="Logo" style={{ padding: 20, maxWidth: '200px' }} />
+            <div style={{ marginBottom: 20 }}>
+              <h1>
+                {organization.organizationName}
+              </h1>
+              <p>
+                <Link to={organization.organizationWebsite}>{organization.organizationWebsite}</Link>
+              </p>
+              <h3>
+                Date posted:
+              </h3>
+              <p>
+                {event.postedDate.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}
+              </p>
+              <h3>
+                Where:
+              </h3>
+              <p>
+                {event.location}
+              </p>
+              <h3>
+                When:
+              </h3>
+              <p>
+                {event.opportunityDate.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}
+              </p>
+              <h3>
+                Skills:
+              </h3>
+              <p>
+                {event.skillsRequired}
+              </p>
+              <Button variant="outline-secondary" as={NavLink} to="/volunteer-opportunities"> Back to Search </Button>
             </div>
-            <h1 style={{ marginTop: 40 }}>
-              ABOUT ORGANIZATION
-            </h1>
-            <div style={{ marginTop: 40 }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Enim neque volutpat ac tincidunt. Vitae semper quis lectus nulla at volutpat diam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Ipsum dolor sit amet consectetur adipiscing elit duis tristique.
+          </Col>
+          <Col md={6} style={{ padding: 50 }}>
+            <div>
+              <h1>
+                {event.name}
+              </h1>
+              <img src={event.pictureURL} alt="eventImage" style={{ padding: 3, maxWidth: '500px' }} />
+              <h6>Join {event.size} other volunteers!</h6>
+              <Row style={{ marginTop: 10 }}>
+                <Col md={2}>
+                  <Button variant="outline-success"> Volunteer </Button>
+                </Col>
+                <Col>
+                  <Button variant="outline-secondary"> Share </Button>
+                </Col>
+              </Row>
+              <div style={{ marginTop: 40 }}>
+                {event.description}
+              </div>
+              <h1 style={{ marginTop: 40 }}>
+                About {organization.organizationName}
+              </h1>
+              <div style={{ marginTop: 40 }}>
+                {organization.organizationDescription}
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </Container>
     </Container>
-  </Container>
-);
+  );
+};
 
 export default VolunteerEvent;
