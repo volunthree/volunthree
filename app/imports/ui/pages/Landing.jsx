@@ -51,7 +51,7 @@ const Landing = () => {
                 <Button className="text-center" variant="outline-primary" as={NavLink} to="/volunteer-opportunities" style={{ paddingLeft: '5px' }}> Find Volunteering Opportunities </Button>
               </Col>
               <Col style={{ maxWidth: 650 }}>
-                <Button variant="outline-primary" as={NavLink} to="/"> Look through Volunteering Organizations </Button>
+                <Button variant="outline-primary" as={NavLink} to="/volunteer-organizations"> Look through Volunteering Organizations </Button>
               </Col>
             </Row>
           </Col>
