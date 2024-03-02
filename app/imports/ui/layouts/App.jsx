@@ -22,6 +22,7 @@ import Forgot from '../pages/Forgot';
 import SignUp from '../pages/SignUp';
 import DirectMessaging from '../pages/DirectMessaging';
 import VolunteerOrganizations from '../pages/VolunteerOrganizations';
+import Profile from '../pages/Profile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/direct-messaging" element={<DirectMessaging />} />
