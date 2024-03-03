@@ -1,7 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Image, Button, Card } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import Odometer from 'react-odometerjs';
 import BarChart from '../components/BarChart';
+import { tempOpportunities } from '../utilities/LocalVariables';
 
+const tempEvent = tempOpportunities[0];
 const Profile = () => (
   <Container fluid>
     <Container
@@ -40,6 +44,25 @@ const Profile = () => (
           </p>
           <Button variant="primary" className="w-100"> EDIT PROFILE </Button>
         </Col>
+      </Row>
+      <hr className="my-5" />
+      <Row>
+        <Col>
+          <h2 className="mb-4 text-center font-weight-bold"> Recent Commitment </h2>
+        </Col>
+      </Row>
+      <Row className="mt-3 d-flex justify-content-center align-items-center">
+        <Col md={6}>
+          <h3> {tempEvent.name}</h3>
+          <p style={{ fontWeight: 'bold' }}>{tempEvent.organization}</p>
+          <p>{tempEvent.description}</p>
+        </Col>
+        <Col md={4}>
+          <Image src={tempEvent.pictureURL} fluid />
+        </Col>
+      </Row>
+      <Row className="mt-3 d-flex justify-content-center align-items-center text-center">
+        <h4> When: {tempEvent.opportunityDate.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })} | Where: {tempEvent.location} </h4>
       </Row>
       <hr className="my-5" />
       <Row>
@@ -97,14 +120,28 @@ const Profile = () => (
         <Button variant="primary" className="w-100"> ADD/EDIT Skills </Button>
       </Row>
       <hr className="my-5" />
+      <Row>
+        <Col>
+          <h2 className="mb-4 text-center font-weight-bold"> My Impact </h2>
+        </Col>
+      </Row>
       <Row className="d-flex justify-content-center">
         <Col md={4}>
-          <h2>My Stats</h2>
+          <Col className="text-center">
+            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <h5>Opportunities Completed</h5>
+            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <h5>Persons Helped</h5>
+            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <h5>Total Hours Served</h5>
+          </Col>
+          <Button variant="primary" className="w-100" as={NavLink} to="/report"> View my Full Report! </Button>
         </Col>
         <Col md={6}>
           <BarChart />
         </Col>
       </Row>
+      <hr className="my-5" />
     </Container>
   </Container>
 );

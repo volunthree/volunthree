@@ -5,7 +5,7 @@ import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Odometer from 'react-odometerjs';
 import { PAGE_IDS } from '../utilities/PageIDs';
-import 'odometer/themes/odometer-theme-car.css';
+import 'odometer/themes/odometer-theme-default.css';
 
 /** Returns the homepage to the Voluntree website. */
 const Landing = () => {
