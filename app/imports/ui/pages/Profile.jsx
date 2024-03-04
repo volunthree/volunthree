@@ -29,7 +29,7 @@ const Profile = () => (
     <Container>
       <Row className="mt-3 d-flex justify-content-center align-items-center">
         <Col md={3}>
-          <Image src="/images/thispersondoesnotexist.jpg" roundedCircle fluid />
+          <Image src="/images/userImages/robJenkins.jpg" roundedCircle fluid />
         </Col>
         <Col md={7}>
           <h1>Robert Jenkins</h1>

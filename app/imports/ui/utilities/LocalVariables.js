@@ -236,3 +236,36 @@ export const tempSkills = [
     preferredRoles: 'Volunteer',
   },
 ];
+
+export const contactsList = [
+  {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    image: '/images/userImages/johnDoe.jpg',
+    id: 1,
+  },
+  {
+    name: 'Jane Smith',
+    email: 'jane.smith@example.com',
+    image: '/images/userImages/janeSmith.jpg',
+    id: 2,
+  },
+  {
+    name: 'Michael Johnson',
+    email: 'michael.johnson@example.com',
+    image: '/images/userImages/michaelJohnson.jpg',
+    id: 3,
+  },
+  {
+    name: 'Emily Brown',
+    email: 'emily.brown@example.com',
+    image: '/images/userImages/emilyBrown.jpg',
+    id: 4,
+  },
+  {
+    name: 'David Wilson',
+    email: 'david.wilson@example.com',
+    image: '/images/userImages/davidWilson.jpg',
+    id: 5,
+  },
+];

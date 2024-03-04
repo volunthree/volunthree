@@ -1,17 +1,28 @@
 import React from 'react';
 import { Container, Card, Row } from 'react-bootstrap';
+import { contactsList } from '../utilities/LocalVariables';
 
-const ContactsList = () => {
-  const contactsList = ['Guy 1', 'Guy 2', 'Guy 3', 'Guy 4', 'Guy 5'];
-  return (
-    <Container>
-      <Row><Card style={{ height: '100px' }}>{contactsList[0]}</Card></Row>
-      <Row><Card style={{ height: '100px' }}>{contactsList[1]}</Card></Row>
-      <Row><Card style={{ height: '100px' }}>{contactsList[2]}</Card></Row>
-      <Row><Card style={{ height: '100px' }}>{contactsList[3]}</Card></Row>
-      <Row><Card style={{ height: '100px' }}>{contactsList[4]}</Card></Row>
-    </Container>
-  );
-};
+const ContactsList = () => (
+  <Container style={{ marginTop: '20px', marginBottom: '20px' }}>
+    <Row className="text-center">
+      <h3> My Friends </h3>
+    </Row>
+    {contactsList.map((contact) => (
+      <Row>
+        <Card className="mb-3">
+          <Card.Body>
+            <div className="d-flex align-items-center">
+              <img src={contact.image} alt="Profile" className="rounded-circle mr-3" style={{ width: '45px', height: '45px', marginRight: '5px', marginLeft: 0 }} />
+              <div>
+                <h5>{contact.name}</h5>
+                <p className="mb-1" style={{ textDecoration: 'underline' }}>{contact.email}</p>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+      </Row>
+    ))}
+  </Container>
+);
 
 export default ContactsList;
