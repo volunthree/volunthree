@@ -7,7 +7,7 @@ import { tempOpportunities } from '../utilities/LocalVariables';
 
 const tempEvent = tempOpportunities[0];
 const Profile = () => (
-  <Container fluid>
+  <Container fluid style={{ padding: 0 }}>
     <Container
       fluid
       className="d-flex align-items-center justify-content-center"
@@ -42,7 +42,7 @@ const Profile = () => (
             In his spare time, Robert enjoys spending time outdoors, hiking, and exploring nature trails. He believes
             in the importance of giving back to society and strives to make a positive impact wherever he goes.
           </p>
-          <Button variant="primary" className="w-100"> EDIT PROFILE </Button>
+          <Button variant="primary" className="w-100" as={NavLink} to="/editprofile"> EDIT PROFILE </Button>
         </Col>
       </Row>
       <hr className="my-5" />
