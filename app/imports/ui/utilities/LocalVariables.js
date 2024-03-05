@@ -269,3 +269,49 @@ export const contactsList = [
     id: 5,
   },
 ];
+
+// CHAT SPECIFIC: DELETE THESE WHEN ACTUAL DATABASE IS MADE
+export const currentUser = 'robjenkins@gmail.com';
+
+export const messageLog = [
+  {
+    sender: 'robjenkins@gmail.com',
+    message: "Hey John, how's it going?",
+  },
+  {
+    sender: 'john.doe@example.com',
+    message: "Hey Rob, I'm good! How about you?",
+  },
+  {
+    sender: 'robjenkins@gmail.com',
+    message: "I'm doing great, thanks for asking!",
+  },
+  {
+    sender: 'john.doe@example.com',
+    message: "That's good to hear. What have you been up to lately?",
+  },
+  {
+    sender: 'robjenkins@gmail.com',
+    message: 'Just been busy with work. How about you?',
+  },
+  {
+    sender: 'john.doe@example.com',
+    message: 'Same here. Work never seems to end!',
+  },
+  {
+    sender: 'robjenkins@gmail.com',
+    message: 'Tell me about it! Do you have any plans for the weekend?',
+  },
+  {
+    sender: 'john.doe@example.com',
+    message: 'Not much planned. Probably just relaxing at home. You?',
+  },
+  {
+    sender: 'robjenkins@gmail.com',
+    message: "Thinking of going for a hike if the weather's nice.",
+  },
+  {
+    sender: 'john.doe@example.com',
+    message: 'Sounds like a plan. Enjoy your hike!',
+  },
+];
