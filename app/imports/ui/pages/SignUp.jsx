@@ -27,7 +27,7 @@ const SignUp = () => {
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { firstName, lastName, email, password } = doc;
-    Meteor.call('createNewUser', { email: email, password: password, lastName: lastName, firstName: firstName }, (err) => {
+    Meteor.call('createNewUser', { email: email, password: password, lastName: lastName, firstName: firstName }, (err, res) => {
       if (err) {
         setError(err.reason);
       } else {
@@ -36,7 +36,6 @@ const SignUp = () => {
         setRedirectToRef(true);
       }
     });
-    Meteor.loginWithPassword(email, password);
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
