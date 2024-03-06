@@ -15,8 +15,10 @@ class SignInPage {
   }
 
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
-  async signin(username, password) {
+  async signin(firstName, lastName, username, password) {
     await this.isDisplayed();
+    await t.typeText(`#${COMPONENT_IDS.SIGN_IN_FORM_FIRSTNAME}`, firstName);
+    await t.typeText(`#${COMPONENT_IDS.SIGN_IN_FORM_LASTNAME}`, lastName);
     await t.typeText(`#${COMPONENT_IDS.SIGN_IN_FORM_EMAIL}`, username);
     await t.typeText(`#${COMPONENT_IDS.SIGN_IN_FORM_PASSWORD}`, password);
     await t.click(`#${COMPONENT_IDS.SIGN_IN_FORM_SUBMIT} input.btn.btn-primary`);
