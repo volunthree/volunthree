@@ -29,6 +29,7 @@ import FAQ from '../pages/FAQ';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
+  // eslint-disable-next-line no-unused-vars
   const { ready } = useTracker(() => {
     const rdy = Roles.subscription.ready();
     return {
@@ -55,7 +56,7 @@ const App = () => {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/editprofile" element={<EditProfile />} />
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
@@ -69,12 +70,11 @@ const App = () => {
   );
 };
 
-/*
+/**
  * ProtectedRoute (see React Router v6 sample)
  * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
-
 const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
   console.log('ProtectedRoute', isLogged);
@@ -101,15 +101,6 @@ const AdminProtectedRoute = ({ ready, children }) => {
   return (isLogged && isAdmin) ? children : <Navigate to="/notauthorized" />;
 };
 
-// Require a component and location to be passed to each ProtectedRoute.
-ProtectedRoute.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-};
-
-ProtectedRoute.defaultProps = {
-  children: <Landing />,
-};
-
 // Require a component and location to be passed to each AdminProtectedRoute.
 AdminProtectedRoute.propTypes = {
   ready: PropTypes.bool,
@@ -122,5 +113,14 @@ AdminProtectedRoute.defaultProps = {
 };
 
 */
+
+// Require a component and location to be passed to each ProtectedRoute.
+ProtectedRoute.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+};
+
+ProtectedRoute.defaultProps = {
+  children: <Landing />,
+};
 
 export default App;
