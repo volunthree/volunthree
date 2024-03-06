@@ -14,9 +14,9 @@ class SignUpPage {
   }
 
   /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
-  async signupUser(username, password) {
-    await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_FIRST_NAME}`, 'Jane');
-    await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_LAST_NAME}`, 'Doe');
+  async signupUser(firstName, lastName, username, password) {
+    await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_FIRST_NAME}`, firstName);
+    await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_LAST_NAME}`, lastName);
     await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_EMAIL}`, username);
     await t.typeText(`#${COMPONENT_IDS.SIGN_UP_FORM_PASSWORD}`, password);
     await t.click(`#${COMPONENT_IDS.SIGN_UP_FORM_SUBMIT} input.btn.btn-primary`);
