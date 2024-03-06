@@ -16,7 +16,7 @@ const Footer = () => {
           </Col>
           <Col xs={6}>
             <h5>Company</h5>
-            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            <Nav.Link href="/contactus">Contact Us</Nav.Link>
             <Nav.Link href="/faq">Frequently Asked Questions</Nav.Link>
             <Nav.Link href="/ext">Privacy Policy</Nav.Link>
             <Nav.Link href="/ext">Terms of Use</Nav.Link>
