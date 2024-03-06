@@ -13,8 +13,8 @@ import { navBar } from './navbar.component';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'john@foo.com', password: 'changeme' };
-const newCredentials = { username: 'jane@foo.com', password: 'changeme' };
+const credentials = { firstName: 'John', lastName: 'Smith', username: 'john@foo.com', password: 'changeme' };
+const newCredentials = { firstName: 'Jane', lastName: 'Doe', username: 'jane@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-production localhost test with default db')
   .page('http://localhost:3000');
@@ -50,7 +50,7 @@ test('Test that existing user pages show up', async () => {
 test('Test that sign up and sign out work', async () => {
   await navBar.gotoSignUpPage();
   await signUpPage.isDisplayed();
-  await signUpPage.signupUser(newCredentials.username, newCredentials.password);
+  await signUpPage.signupUser(newCredentials.firstName, newCredentials.lastName, newCredentials.username, newCredentials.password);
   await navBar.isLoggedIn(newCredentials.username);
   await navBar.logout();
   await signOutPage.isDisplayed();

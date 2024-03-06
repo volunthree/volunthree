@@ -27,4 +27,6 @@ export const COMPONENT_IDS = {
   VOLUNTEER_DROPDOWN_OPPORTUNITIES: 'volunteer-dropdown-opportunities',
   VOLUNTEER_DROPDOWN_ORGANIZATIONS: 'volunteer-dropdown-organizations',
   VOLUNTEER_DROPDOWN_CALENDAR: 'volunteer-dropdown-calendar',
+  SIGN_IN_FORM_FIRSTNAME: 'sign-in-form-firstname',
+  SIGN_IN_FORM_LASTNAME: 'sign-in-form-lastname',
 };
