@@ -24,8 +24,8 @@ import DirectMessaging from '../pages/DirectMessaging';
 import VolunteerOrganizations from '../pages/VolunteerOrganizations';
 import Profile from '../pages/Profile';
 import EditProfile from '../pages/EditProfile';
-import ContactUs from "../pages/ContactUs";
-import FAQ from "../pages/FAQ";
+import ContactUs from '../pages/ContactUs';
+import FAQ from '../pages/FAQ';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -52,7 +52,7 @@ const App = () => {
           <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/FAQ" element={<FAQ />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/profile" element={<Profile />} />
