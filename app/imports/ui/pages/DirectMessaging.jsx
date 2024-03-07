@@ -26,50 +26,7 @@ const DirectMessaging = () => (
     </Container>
     <Card style={{ height: '600px', paddingTop: '50px' }}>
       <Container fluid className="d-flex flex-column" style={{ height: '500px' }}>
-        <Row style={{ height: '500px' }}>
-          <Col xs={3}>
-            <Card style={{ height: '500px' }}>
-              <div style={{ height: '90%' }}>
-                <Container style={{ overflowY: 'scroll', height: '99%' }}>
-                  <ContactsList />
-                </Container>
-              </div>
-              <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Container fluid>
-                  <Button>Add Friend</Button>
-                </Container>
-              </div>
-            </Card>
-          </Col>
-          <Col>
-            <Card style={{ height: '500px' }}>
-              <Row style={{ height: '80%' }}>
-                <div style={{ overflowY: 'scroll', height: '90%', width: '99%', marginTop: '5px' }}>
-                  <Container>
-                    <Row className="text-center">
-                      <h3> John Doe </h3>
-                    </Row>
-                    <MessageLog />
-                  </Container>
-                </div>
-              </Row>
-              <Row style={{ paddingTop: '20px' }}>
-                <Form>
-                  <Row style={{ width: '100%' }}>
-                    <Col xs={10} style={{ marginLeft: '60px' }}>
-                      <Form.Group>
-                        <Form.Control placeholder="Type a message out here..." />
-                      </Form.Group>
-                    </Col>
-                    <Col style={{ width: '100%' }}>
-                      <Button type="submit">Send</Button>
-                    </Col>
-                  </Row>
-                </Form>
-              </Row>
-            </Card>
-          </Col>
-        </Row>
+        <ContactsList />
       </Container>
     </Card>
   </Container>
