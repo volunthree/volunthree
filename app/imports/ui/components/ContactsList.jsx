@@ -5,7 +5,7 @@ import MessageLog from './MessageLog';
 
 /** Renders the contact list of a user and allows for selection of chat logs (Also renders chat logs themselves) */
 const ContactsList = () => {
-  const [selectedContact, setSelectedContact] = useState('');
+  const [selectedContact, setSelectedContact] = useState(contactsList[0].email);
 
   function handleClick(correspondingContact) {
     setSelectedContact(correspondingContact);
@@ -22,7 +22,7 @@ const ContactsList = () => {
                   <h3> My Friends </h3>
                 </Row>
                 {contactsList.map((contact) => (
-                  <Row>
+                  <Row key={contact.id}>
                     <Card className="mb-3" onClick={() => handleClick(contact.email)} style={{ textDecoration: 'none' }}>
                       <Card.Body>
                         <Row>
