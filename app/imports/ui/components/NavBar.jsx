@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, PeopleFill } from 'react-bootstrap-icons';
 import { COMPONENT_IDS } from '../utilities/ComponentIDs';
 
 const NavBar = () => {
@@ -38,6 +38,11 @@ const NavBar = () => {
             <Nav.Link id={COMPONENT_IDS.NAVBAR_FAQ} as={NavLink} to="/faq" key="faq">FAQ</Nav.Link>
           </Nav>
           <Nav className="justify-content-end">
+            {currentUser === '' ? '' : (
+              <Nav.Link id={COMPONENT_IDS.NAVBAR_FRIENDS} as={NavLink} to="/direct-messaging" key="friends">
+                <PeopleFill />
+              </Nav.Link>
+            )}
             {currentUser === '' ? (
               <NavDropdown id={COMPONENT_IDS.NAVBAR_LOGIN_DROPDOWN} title="Login">
                 <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_LOGIN_DROPDOWN_SIGN_IN} as={NavLink} to="/signin"><PersonFill />Sign in</NavDropdown.Item>
@@ -45,7 +50,7 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id={COMPONENT_IDS.NAVBAR_CURRENT_USER} title={currentUser}>
-                <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_MY_PROFILE} as={NavLink} to="/profile/:_id" key="profile">View My Profile</NavDropdown.Item>
+                <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_MY_PROFILE} as={NavLink} to="/profile" key="profile">View My Profile</NavDropdown.Item>
                 <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_MY_REPORTS} as={NavLink} to="/report" key="report">My Reports</NavDropdown.Item>
                 <NavDropdown.Item id={COMPONENT_IDS.NAVBAR_SIGN_OUT} as={NavLink} to="/signout"><BoxArrowRight /> Sign out</NavDropdown.Item>
               </NavDropdown>
