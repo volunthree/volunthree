@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import { tempOpportunities, tempOrganizations } from '../utilities/LocalVariables';
 
@@ -12,8 +12,8 @@ const VolunteerEvent = () => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
   // TODO: Fix the routing getting to this page from anywhere in the application such that it uses the id to access data.
-  const opportunityID = useLocation().state.id;
-  const event = tempOpportunities.find(opp => opp._id === opportunityID);
+  const opportunityID = useParams();
+  const event = tempOpportunities.find(opp => opp._id === parseInt(opportunityID.id, 10));
   const organization = tempOrganizations.find(org => org.organizationName === event.organization);
   // TODO: Fix the above code. It works until the context of the page access is broken.
   return (
