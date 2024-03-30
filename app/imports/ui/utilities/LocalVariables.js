@@ -275,43 +275,98 @@ export const currentUser = 'robjenkins@gmail.com';
 
 export const messageLog = [
   {
+    id: 1,
     sender: 'robjenkins@gmail.com',
+    receiver: 'john.doe@example.com',
     message: "Hey John, how's it going?",
   },
   {
+    id: 2,
     sender: 'john.doe@example.com',
+    receiver: 'robjenkins@gmail.com',
     message: "Hey Rob, I'm good! How about you?",
   },
   {
+    id: 3,
     sender: 'robjenkins@gmail.com',
+    receiver: 'john.doe@example.com',
     message: "I'm doing great, thanks for asking!",
   },
   {
+    id: 4,
     sender: 'john.doe@example.com',
+    receiver: 'robjenkins@gmail.com',
     message: "That's good to hear. What have you been up to lately?",
   },
   {
+    id: 5,
     sender: 'robjenkins@gmail.com',
+    receiver: 'john.doe@example.com',
     message: 'Just been busy with work. How about you?',
   },
   {
+    id: 6,
     sender: 'john.doe@example.com',
+    receiver: 'robjenkins@gmail.com',
     message: 'Same here. Work never seems to end!',
   },
   {
+    id: 7,
     sender: 'robjenkins@gmail.com',
+    receiver: 'john.doe@example.com',
     message: 'Tell me about it! Do you have any plans for the weekend?',
   },
-  {
+  { id: 8,
     sender: 'john.doe@example.com',
+    receiver: 'robjenkins@gmail.com',
     message: 'Not much planned. Probably just relaxing at home. You?',
   },
   {
+    id: 9,
     sender: 'robjenkins@gmail.com',
+    receiver: 'john.doe@example.com',
     message: "Thinking of going for a hike if the weather's nice.",
   },
   {
+    id: 10,
     sender: 'john.doe@example.com',
+    receiver: 'robjenkins@gmail.com',
     message: 'Sounds like a plan. Enjoy your hike!',
+  },
+  {
+    id: 11,
+    sender: 'jane.smith@example.com',
+    receiver: 'robjenkins@gmail.com',
+    message: 'Hello! How are you doing?',
+  },
+  {
+    id: 12,
+    sender: 'michael.johnson@example.com',
+    receiver: 'robjenkins@gmail.com',
+    message: 'Hi im Michael Johnson',
+  },
+  {
+    id: 13,
+    sender: 'david.wilson@example.com',
+    receiver: 'robjenkins@gmail.com',
+    message: 'David Wilson is inside your house',
+  },
+  {
+    id: 14,
+    sender: 'emily.brown@example.com',
+    receiver: 'robjenkins@gmail.com',
+    message: 'When is the best time for you to meet?',
+  },
+  {
+    id: 15,
+    sender: 'robjenkins@gmail.com',
+    receiver: 'emily.brown@example.com',
+    message: 'Next saturday probably',
+  },
+  {
+    id: 16,
+    sender: 'robjenkins@gmail.com',
+    receiver: 'jane.smith@example.com',
+    message: 'I am doing great, thanks for asking!',
   },
 ];
