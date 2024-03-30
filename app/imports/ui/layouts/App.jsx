@@ -61,7 +61,7 @@ const App = () => {
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/direct-messaging" element={<DirectMessaging />} />
-          <Route path="/volunteer-event/:_id" element={<VolunteerEvent />} />
+          <Route path="/volunteer-opportunities/:id" element={<VolunteerEvent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
