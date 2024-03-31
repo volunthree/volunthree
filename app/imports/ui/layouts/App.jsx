@@ -26,6 +26,7 @@ import Profile from '../pages/Profile';
 import EditProfile from '../pages/EditProfile';
 import ContactUs from '../pages/ContactUs';
 import FAQ from '../pages/FAQ';
+import AddOpportunity from "../pages/AddOpportunity";
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/add-opportunity" element={<ProtectedRoute><AddOpportunity /></ProtectedRoute>} />
           <Route path="/editprofile" element={<EditProfile />} />
           <Route path="/forgotchange" element={<ForgotChange />} />
           <Route path="/forgot" element={<Forgot />} />
