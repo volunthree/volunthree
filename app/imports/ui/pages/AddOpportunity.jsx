@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { tempOrganizations } from '../utilities/LocalVariables';
-import Organization from '../components/Organization';
 
 const AddOpportunity = () => {
   // TODO: Once finalized, ID field will be replaced dynamically
@@ -103,7 +103,7 @@ const AddOpportunity = () => {
               onChange={(e) => setSkills(e.target.value)}
             />
           </Form.Group>
-          <Button variant="success" type="submit">
+          <Button variant="success" type="submit" as={NavLink} to="/volunteer-opportunities">
             Add Opportunity!
           </Button>
         </Form>
