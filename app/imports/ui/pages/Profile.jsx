@@ -32,14 +32,14 @@ const Profile = () => (
           <Image src="/images/userImages/robJenkins.jpg" roundedCircle fluid />
         </Col>
         <Col md={7}>
-          <h1>Robert Jenkins</h1>
-          <p style={{ textDecoration: 'underline', fontStyle: 'italic' }}>robjenkins@gmail.com</p>
+          <h1>Kenji Sanehira</h1>
+          <p style={{ textDecoration: 'underline', fontStyle: 'italic' }}>kenjisan@hawaii.edu</p>
           <p>Honolulu, Hawaii</p>
-          <p>Robert Jenkins is an avid volunteer who dedicates his time to helping those in need. He has a passion for
+          <p>Kenji Sanehira is an avid volunteer who dedicates his time to helping those in need. He has a passion for
             making a difference in his community and is actively involved in food drives and pet shelters. His
             compassionate nature and willingness to lend a hand have made him an invaluable asset to various charitable
             organizations.
-            In his spare time, Robert enjoys spending time outdoors, hiking, and exploring nature trails. He believes
+            In his spare time, Kenji enjoys spending time outdoors, hiking, and exploring nature trails. He believes
             in the importance of giving back to society and strives to make a positive impact wherever he goes.
           </p>
           <Button variant="primary" className="w-100" as={NavLink} to="/editprofile"> EDIT PROFILE </Button>
