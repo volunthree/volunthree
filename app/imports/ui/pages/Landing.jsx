@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 
 import DefaultLandingPage from '../components/DefaultLandingPage';
+import UserDashboard from '../components/UserDashboard';
 
 /** Returns the homepage to the Voluntree website. */
 const Landing = () => {
@@ -37,15 +38,11 @@ const Landing = () => {
           <p>Volunteering Simplified. Impact Amplified.</p>
         </div>
       </Container>
-      <Container fluid>
+      <Container style={{ alignContent: 'center' }}>
         {currentUser === '' ? (
-          <div>
-            <DefaultLandingPage />
-          </div>
+          <DefaultLandingPage />
         ) : (
-          <div>
-            Hello User
-          </div>
+          <UserDashboard />
         )}
       </Container>
     </Container>
