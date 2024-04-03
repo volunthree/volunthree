@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
 import { Container, Card, Row, Image, Col, Button, Form } from 'react-bootstrap';
-import { contactsList } from '../utilities/LocalVariables';
+import { contactsList, messageLog, currentUser } from '../utilities/LocalVariables';
 import MessageLog from './MessageLog';
 
 /** Renders the contact list of a user and allows for selection of chat logs (Also renders chat logs themselves) */
 const ContactsList = () => {
   const [selectedContact, setSelectedContact] = useState(contactsList[0].email);
+  const [formInput, setFormInput] = useState('');
+  const [currentMessageList, setCurrentMessageList] = useState(messageLog);
 
   function handleClick(correspondingContact) {
     setSelectedContact(correspondingContact);
   }
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    const newMessage = {
+      id: currentMessageList[currentMessageList.length - 1].id + 1,
+      sender: currentUser,
+      receiver: selectedContact,
+      message: formInput,
+    };
+    const newArray = [...currentMessageList];
+    newArray.push(newMessage);
+    setCurrentMessageList(newArray);
+    setFormInput('');
+  };
 
   return (
     <Row style={{ height: '500px' }}>
@@ -27,7 +43,7 @@ const ContactsList = () => {
                       <Card.Body>
                         <Row>
                           <Col md={4}>
-                            <Image src={contact.image} alt="Friend's Profile Picture" rounded fluid/>
+                            <Image src={contact.image} alt="Friend's Profile Picture" rounded fluid />
                           </Col>
                           <Col md={6}>
                             <Container fluid>
@@ -55,16 +71,16 @@ const ContactsList = () => {
           <Row style={{ height: '80%' }}>
             <div style={{ overflowY: 'scroll', height: '90%', width: '99%', marginTop: '5px' }}>
               <Container>
-                <MessageLog selectedContact={selectedContact} setSelectedContact={setSelectedContact} />
+                <MessageLog selectedContact={selectedContact} currentMessageList={currentMessageList} />
               </Container>
             </div>
           </Row>
           <Row style={{ paddingTop: '20px' }}>
-            <Form>
+            <Form onSubmit={onFormSubmit}>
               <Row style={{ width: '100%' }}>
                 <Col xs={10} style={{ marginLeft: '60px' }}>
                   <Form.Group>
-                    <Form.Control placeholder="Type a message out here..." />
+                    <Form.Control type="text" placeholder="Type a message out here..." onChange={(e) => setFormInput(e.target.value)} value={formInput} />
                   </Form.Group>
                 </Col>
                 <Col style={{ width: '100%' }}>
