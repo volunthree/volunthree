@@ -1,8 +1,7 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN", "firstName": "Admin", "lastName": "MATRP"
-    },
-    { "email": "john@foo.com", "password": "changeme", "role": "USER" , "firstName": "John", "lastName": "Doe" }
+    { "firstName": "John", "lastName": "Smith", "username": "john@foo.com", "password": "changeme" },
+    { "firstName": "Admin", "lastName": "Guy", "username": "admin@foo.com", "password": "changeme", "role": "SUPERADMIN" }
   ],
 
   "defaultData": [
@@ -11,6 +10,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
   "public": {
     "development": true
   }
