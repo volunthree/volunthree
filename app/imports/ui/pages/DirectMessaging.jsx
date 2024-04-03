@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Form, Row, Col, Button, Card } from 'react-bootstrap';
-import MessageLog from '../components/MessageLog.jsx';
+import { Container, Card } from 'react-bootstrap';
 import ContactsList from '../components/ContactsList.jsx';
 
 /** DirectMessaging page where users can send messages with other users/organizations */

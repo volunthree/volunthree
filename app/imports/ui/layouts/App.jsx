@@ -28,6 +28,7 @@ import ContactUs from '../pages/ContactUs';
 import FAQ from '../pages/FAQ';
 import AddOpportunity from '../pages/AddOpportunity';
 import EditOpportunity from '../pages/EditOpportunity';
+import IndividualsInNeedOfService from '../pages/IndividualsInNeedOfService';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/volunteer-calendar" element={<VolunteerCalendar />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/individuals-in-need-of-service" element={<IndividualsInNeedOfService />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/volunteer" element={<VolunteerEvent />} />
           <Route path="/pricing" element={<Pricing />} />

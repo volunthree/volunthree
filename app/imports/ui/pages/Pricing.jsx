@@ -26,13 +26,13 @@ const Pricing = () => (
     >
       <div>
         <h1>Pricing</h1>
-        <p>Contribute to a Non-Profit!</p>
+        <p>New opportunities for your Non-Profit!</p>
       </div>
     </Container>
     <Container fluid style={{ height: '100px', padding: '20px', margin: '20px' }}>
       <div style={{ textAlign: 'center' }}>
-        <h1> Voluntree Membership Plans </h1>
-        <p>Choose the best plan for you and start making an impact today!</p>
+        <h1> Voluntree Organization Plans </h1>
+        <p>Choose the best plan for your organization and start making an impact today!</p>
       </div>
     </Container>
     <Container fluid style={{ padding: '20px', margin: '20px' }}>
@@ -81,7 +81,7 @@ const Pricing = () => (
                 </Form>
               </Card.Text>
               <div className="text-center">
-                <Button variant="primary">Subscribe as Volunteer</Button>
+                <Button variant="primary">Create a Volunteer Organization</Button>
               </div>
             </Card.Body>
           </Card>
@@ -128,7 +128,7 @@ const Pricing = () => (
                 </Form>
               </Card.Text>
               <div className="text-center">
-                <Button variant="primary">Subscribe as Gardener</Button>
+                <Button variant="primary">Create a Gardener Organization</Button>
               </div>
             </Card.Body>
           </Card>
@@ -175,7 +175,7 @@ const Pricing = () => (
                 </Form>
               </Card.Text>
               <div className="text-center">
-                <Button variant="primary">Subscribe as Tree Hugger</Button>
+                <Button variant="primary">Create a Tree Hugger Organization</Button>
               </div>
             </Card.Body>
           </Card>
