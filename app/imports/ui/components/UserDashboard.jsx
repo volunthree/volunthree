@@ -22,7 +22,7 @@ const UserDashboard = () => (
         justifyContent: 'center',
         paddingLeft: '4rem',
         paddingRight: '4rem',
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/UserLandingHeader.jpeg)',
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/dashboard1.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         alignItems: 'center',
