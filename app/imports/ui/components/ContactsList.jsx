@@ -27,7 +27,7 @@ const ContactsList = () => {
                       <Card.Body>
                         <Row>
                           <Col md={4}>
-                            <Image src={contact.image} alt="Friend's Profile Picture" rounded fluid/>
+                            <Image src={contact.image} alt="Friend's Profile Picture" rounded fluid />
                           </Col>
                           <Col md={6}>
                             <Container fluid>

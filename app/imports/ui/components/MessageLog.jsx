@@ -5,7 +5,7 @@ import { contactsList, messageLog, currentUser } from '../utilities/LocalVariabl
 /** Renders the chat logs between the two users */
 const MessageLog = (stuff) => {
 
-  const { selectedContact, setSelectedContact } = stuff;
+  const { selectedContact } = stuff;
 
   const filteredList = messageLog.filter(message => (message.sender === currentUser && message.receiver === selectedContact) || (message.sender === selectedContact && message.receiver === currentUser));
   const filteredInfo = contactsList.filter(contact => contact.email === selectedContact);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Row, Container, Col, Form, Dropdown, Pagination, Card} from 'react-bootstrap';
+import { Row, Container, Col, Form, Dropdown, Pagination, Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import Opportunity from '../components/Opportunity';
