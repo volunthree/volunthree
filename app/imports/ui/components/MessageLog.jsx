@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Container, Row, Card, Col, Image } from 'react-bootstrap';
-import { contactsList, messageLog, currentUser } from '../utilities/LocalVariables';
+import { contactsList, currentUser } from '../utilities/LocalVariables';
 
 /** Renders the chat logs between the two users */
-const MessageLog = (stuff) => {
+const MessageLog = (parameters) => {
 
-  const { selectedContact } = stuff;
+  const { selectedContact, currentMessageList } = parameters;
 
-  const filteredList = messageLog.filter(message => (message.sender === currentUser && message.receiver === selectedContact) || (message.sender === selectedContact && message.receiver === currentUser));
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const filteredList = currentMessageList.filter(message => (message.sender === currentUser && message.receiver === selectedContact) || (message.sender === selectedContact && message.receiver === currentUser));
   const filteredInfo = contactsList.filter(contact => contact.email === selectedContact);
+
+  useEffect(scrollToBottom, [filteredList]);
 
   return (
     <Row className="text-center">
@@ -38,6 +45,7 @@ const MessageLog = (stuff) => {
               </Card>
             )
         ))}
+        <div ref={messagesEndRef} />
       </Container>
     </Row>
   );
