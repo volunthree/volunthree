@@ -35,6 +35,7 @@ const NavBar = () => {
               <NavDropdown.Item id={COMPONENT_IDS.VOLUNTEER_DROPDOWN_CALENDAR} as={NavLink} to="/volunteer-calendar"> Volunteer Calendar </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link id={COMPONENT_IDS.NAVBAR_PRICING} as={NavLink} to="/pricing" key="pricing">Pricing</Nav.Link>
+            <Nav.Link id={COMPONENT_IDS.NAVBAR_IINOS} as={NavLink} to="/individuals-in-need-of-service" key="iinos">Individuals In Need of Service</Nav.Link>
             <Nav.Link id={COMPONENT_IDS.NAVBAR_FAQ} as={NavLink} to="/faq" key="faq">FAQ</Nav.Link>
           </Nav>
           <Nav className="justify-content-end">

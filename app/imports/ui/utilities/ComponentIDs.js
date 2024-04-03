@@ -2,6 +2,7 @@ export const COMPONENT_IDS = {
   MANGAGE_DATABASE_DUMP: 'manage-database-dump',
   NAVBAR_ABOUT_US: 'navbar-about-us',
   NAVBAR_PRICING: 'navbar-pricing',
+  NAVBAR_IINOS: 'navbar-iinos',
   NAVBAR_MY_PROFILE: 'navbar-my-profile',
   NAVBAR_MY_REPORTS: 'navbar-my-reports',
   NAVBAR_FAQ: 'navbar-faq',
