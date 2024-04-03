@@ -369,4 +369,4 @@ export const messageLog = [
     receiver: 'jane.smith@example.com',
     message: 'I am doing great, thanks for asking!',
   },
-  ];
+];
