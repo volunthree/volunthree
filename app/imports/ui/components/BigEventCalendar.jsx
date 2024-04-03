@@ -11,7 +11,7 @@ const BigEventCalendar = () => {
   const navigate = useNavigate();
   const handleSelectEvent =
         (event) => {
-          navigate(`/volunteer-event/${event._id}`);
+          navigate(`/volunteer-opportunities/${event._id}`);
         };
   return (
     <div style={{ height: 700 }}>

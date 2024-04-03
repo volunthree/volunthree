@@ -84,6 +84,13 @@ const VolunteerEvent = () => {
               <div style={{ marginTop: 40 }}>
                 {event.description}
               </div>
+              {currentUser === '' ? (
+                <div />
+              ) : (
+                <div className="d-flex justify-content-center">
+                  <Button variant="success" as={NavLink} to="/edit-opportunity">Edit Opportunity</Button>
+                </div>
+              )}
               <h1 style={{ marginTop: 40 }}>
                 About {organization.organizationName}
               </h1>
