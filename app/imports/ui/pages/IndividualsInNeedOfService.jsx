@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Tabs, Tab } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
+import MakeARequest from '../components/MakeARequest';
+import ServeTheCommunity from '../components/ServeTheCommunity';
 
 /** Returns the homepage to the Voluntree website. */
 const IndividualsInNeedOfService = () => {
-  const [key, setKey] = useState('howItWorks');
+  const [key, setKey] = useState('serveCommunity');
   return (
     <Container
       fluid
@@ -32,17 +34,17 @@ const IndividualsInNeedOfService = () => {
         </div>
       </Container>
       <Container fluid style={{ alignContent: 'center' }}>
-        <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly'}}>
-          <Tab eventKey="howItWorks" title="How it Works">
-            <div> How it works </div>
-          </Tab>
+        <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly' }}>
           <Tab eventKey="serveCommunity" title="Serve The Community">
-            <div> Serve the Community </div>
+            <Container>
+              <ServeTheCommunity />
+            </Container>
           </Tab>
           <Tab eventKey="makeRequest" title="Make a Request">
-            <div> Make Request </div>
+            <Container>
+              <MakeARequest />
+            </Container>
           </Tab>
-
         </Tabs>
       </Container>
     </Container>

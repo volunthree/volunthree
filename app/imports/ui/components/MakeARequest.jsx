@@ -1,97 +1,76 @@
 import { Button, Container, Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import React, { useState } from '@types/react';
-import { tempOrganizations } from '../utilities/LocalVariables';
+import React, { useState } from 'react';
 
 const MakeARequest = () => {
   const [name, setName] = useState('');
+  const [timeOfRequest, setTimeOfRequest] = useState('');
+  const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
+  const [skills, setSkills] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <Container fluid style={{ padding: 0 }}>
+    <Container fluid style={{ marginTop: 20, marginBottom: 40, paddingTop: 20, paddingBottom: 20 }}>
       <Container
         fluid
         className="d-flex align-items-center justify-content-center"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/headerImage.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100px',
-          color: 'white',
-          textAlign: 'center',
-          overflowY: 'auto',
-          padding: 0,
-        }}
       >
         <div>
-          <h1> Add Opportunity </h1>
+          <h1> In need of Assistance? </h1>
+          <h6> Fill out the form below to invite volunteers to help you out!</h6>
         </div>
       </Container>
       <Container style={{ padding: '20px', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', marginTop: '30px' }}>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formName">
-            <Form.Label>Opportunity Name</Form.Label>
+            <Form.Label>Title your Service Request</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter the name of the opportunity."
+              placeholder="Enter the title of the request."
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Opportunity Organization</Form.Label>
-            <Form.Select value={organization} onSelect={(e) => setOrganization(e.target)}>
-              <option>Select the opportunity organization:</option>
-              {tempOrganizations.map((org) => (
-                <option> {org.organizationName} </option>
-              ))}
-            </Form.Select>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formImage">
-            <Form.Label>Opportunity Image</Form.Label>
+          <Form.Group className="mb-3" controlId="formTime">
+            <Form.Label>When do you need assistance?</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Select a picture that best fits the opportunity."
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
+              placeholder="Enter a time for your request. (ex. Tuesday at 10:00 pm)"
+              value={timeOfRequest}
+              onChange={(e) => setTimeOfRequest(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formLocation">
-            <Form.Label>Location</Form.Label>
+            <Form.Label>Where do you need assistance?</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter the location of the opportunity"
+              placeholder="Enter the location of the request. (ex. Honolulu)"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formDescription">
-            <Form.Label>Description</Form.Label>
+          <Form.Group className="mb-3" controlId="formLocation">
+            <Form.Label>Describe the request you are making.</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter the opportunity Description"
+              placeholder="Enter your request description here."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formDate">
-            <Form.Label>Opportunity Date</Form.Label>
+          <Form.Group className="mb-3" controlId="formLocation">
+            <Form.Label>Are there any skills required/requested? List them here!</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter the opportunity date."
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formSkills">
-            <Form.Label>Skills Required</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter useful opportunity skills"
+              placeholder="Please list any skills that this request may need here."
               value={skills}
               onChange={(e) => setSkills(e.target.value)}
             />
           </Form.Group>
           <Button variant="success" type="submit" as={NavLink} to="/volunteer-opportunities">
-            Add Opportunity!
+            Submit Your Request
           </Button>
         </Form>
       </Container>

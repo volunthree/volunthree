@@ -80,6 +80,7 @@ const VolunteerOpportunities = () => {
             </Col>
           ))}
           {currentUser === '' ? (
+            // eslint-disable-next-line react/jsx-no-useless-fragment
             <></>
           ) : (
             <Col md={6}>
