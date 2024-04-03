@@ -38,7 +38,7 @@ const Landing = () => {
           <p>Volunteering Simplified. Impact Amplified.</p>
         </div>
       </Container>
-      <Container style={{ alignContent: 'center' }}>
+      <Container fluid style={{ alignContent: 'center' }}>
         {currentUser === '' ? (
           <DefaultLandingPage />
         ) : (
