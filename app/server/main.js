@@ -1,5 +1,7 @@
-import '/imports/startup/server/Accounts';
-import '/imports/startup/server/Publications';
-import '/imports/startup/server/Mongo';
+import '/imports/startup/server/DefaultData';
+
 // be sure to import the methods.
 import '/imports/api/users/userMethods.js';
+
+// be sure to import the publications.
+import '/imports/startup/server/Publications';

@@ -12,7 +12,7 @@ import { navBar } from './navbar.component';
 
 /* global fixture:false, test:false */
 
-/** Credentials for one of the sample users defined in settings.development.json. */
+/** Credentials for one of the sample users defined in settings.development.json. Also a new, not yet registered sample user, Jane. */
 const credentials = { firstName: 'John', lastName: 'Smith', username: 'john@foo.com', password: 'changeme' };
 const newCredentials = { firstName: 'Jane', lastName: 'Doe', username: 'jane@foo.com', password: 'changeme' };
 
