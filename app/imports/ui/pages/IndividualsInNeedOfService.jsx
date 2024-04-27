@@ -3,6 +3,7 @@ import { Container, Tabs, Tab } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import MakeARequest from '../components/MakeARequest';
 import ServeTheCommunity from '../components/ServeTheCommunity';
+import MapContainer from '../components/MapContainer';
 
 /** Returns the homepage to the Voluntree website. */
 const IndividualsInNeedOfService = () => {
@@ -36,9 +37,10 @@ const IndividualsInNeedOfService = () => {
       <Container fluid style={{ alignContent: 'center' }}>
         <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly' }}>
           <Tab eventKey="serveCommunity" title="Serve The Community">
-            <Container>
+            <Container fluid>
               <ServeTheCommunity />
             </Container>
+            <MapContainer />
           </Tab>
           <Tab eventKey="makeRequest" title="Make a Request">
             <Container>
