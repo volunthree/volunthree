@@ -29,6 +29,7 @@ import FAQ from '../pages/FAQ';
 import AddOpportunity from '../pages/AddOpportunity';
 import EditOpportunity from '../pages/EditOpportunity';
 import IndividualsInNeedOfService from '../pages/IndividualsInNeedOfService';
+import VolunteerOrganization from '../pages/VolunteerOrganization';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/direct-messaging" element={<DirectMessaging />} />
           <Route path="/volunteer-opportunities/:id" element={<VolunteerEvent />} />
+          <Route path="/volunteer-organizations/:id" element={<VolunteerOrganization />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
