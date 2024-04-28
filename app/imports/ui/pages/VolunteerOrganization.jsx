@@ -1,11 +1,9 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { useTracker } from 'meteor/react-meteor-data';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, NavLink, useParams } from 'react-router-dom';
-import { PAGE_IDS } from '../utilities/PageIDs';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import { tempOpportunities, tempOrganizations } from '../utilities/LocalVariables';
 import Opportunity from '../components/Opportunity';
+import MapContainerOrganizations from '../components/MapContainerOrganizations';
 
 /* Renders a page describing an event from the database of Volunteering events. Allows the user to see info on both the event and organization */
 const VolunteerOrganization = () => {
@@ -51,6 +49,7 @@ const VolunteerOrganization = () => {
           <Opportunity opp={opp} />
         ))}
       </Container>
+      <MapContainerOrganizations filteredOpp={tempOpportunities.filter(opp => opp.organization === organization.organizationName)} />
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import { Container, Tabs, Tab } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import MakeARequest from '../components/MakeARequest';
 import ServeTheCommunity from '../components/ServeTheCommunity';
-import MapContainer from '../components/MapContainer';
+import MapContainerIndividuals from '../components/MapContainerIndividuals';
 
 /** Returns the homepage to the Voluntree website. */
 const IndividualsInNeedOfService = () => {
@@ -40,7 +40,7 @@ const IndividualsInNeedOfService = () => {
             <Container fluid>
               <ServeTheCommunity />
             </Container>
-            <MapContainer />
+            <MapContainerIndividuals />
           </Tab>
           <Tab eventKey="makeRequest" title="Make a Request">
             <Container>
