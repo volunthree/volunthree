@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Card, Button, Row, Col, Image } from 'react-bootstrap';
+import { Container, Card, Button, Row, Col, Image, Pagination } from 'react-bootstrap';
 import { serviceRequests } from '../utilities/LocalVariables';
 
 const ServeTheCommunity = () => (
-  <Container>
+  <Container fluid>
     <Container className="d-flex flex-wrap justify-content-center">
       <h1 className="mt-4">View and Accept User Requests</h1>
     </Container>
@@ -35,8 +35,22 @@ const ServeTheCommunity = () => (
           </Col>
         ))}
       </Row>
+      <Container fluid style={{ display: 'flex', justifyContent: 'center' }}>
+        <Pagination>
+          <Pagination.First />
+          <Pagination.Item active>{1}</Pagination.Item>
+          <Pagination.Item>{2}</Pagination.Item>
+          <Pagination.Item>{3}</Pagination.Item>
+          <Pagination.Ellipsis />
+          <Pagination.Next />
+          <Pagination.Last />
+        </Pagination>
+      </Container>
+      <hr className="my-5" />
+      <Container className="d-flex flex-wrap justify-content-center">
+        <h1 className="mt-4">Individuals In Need Of Service Map</h1>
+      </Container>
     </Container>
-    <hr className="my-5" />
   </Container>
 
 );
