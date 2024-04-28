@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { Button, Card } from 'react-bootstrap';
 import { serviceRequests } from '../utilities/LocalVariables';
 
 const MapContainer = () => {
@@ -40,10 +41,17 @@ const MapContainer = () => {
         >
           <div>
             {selectedRequest && (
-              <div>
-                <h4>{selectedRequest.title}</h4>
-                {/* Display other information about the request */}
-              </div>
+              <Card style={{ width: '18rem', margin: '10px' }}>
+                <Card.Body>
+                  <Card.Title>{selectedRequest.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Requested by: {selectedRequest.userName}</Card.Subtitle>
+                  <Card.Text>
+                    <strong>Location:</strong> {selectedRequest.location}<br />
+                    <strong>Description:</strong> {selectedRequest.description}
+                  </Card.Text>
+                  <Button variant="primary">Inquire More</Button>
+                </Card.Body>
+              </Card>
             )}
           </div>
         </InfoWindow>
