@@ -153,7 +153,7 @@ export const tempOpportunities = [
     latitude: 21.3861,
     longitude: -157.9339,
     organization: 'Green Earth Initiative',
-    pictureURL: '/images/opportunities/beachcleanup.jpg',
+    pictureURL: '/images/opportunities/beachcleanup.png',
     description: 'Join us for a beach cleanup at Oceanfront Beach in Bayview. Help us keep our beaches clean and safe for everyone to enjoy. Activities will include trash collection, recycling, and environmental education. ' +
         'No experience is necessary, just a love for the beach and a desire to protect our oceans.',
     postedDate: new Date('2024-04-01'),
@@ -213,7 +213,7 @@ export const tempOpportunities = [
     latitude: 21.3369,
     longitude: -157.7094,
     organization: 'Wilderness Preservation Society',
-    pictureURL: '/images/opportunities/rivercleanup.jpg',
+    pictureURL: '/images/opportunities/rivercleanup.png',
     description: 'Join us for a river cleanup at Riverfront Park in Willow Creek. Help remove trash and debris from the riverbanks and improve the health of our local waterways. This is a great opportunity to protect wildlife and' +
         ' promote a clean environment for future generations.',
     postedDate: new Date('2024-04-20'),
@@ -258,7 +258,7 @@ export const tempOpportunities = [
     latitude: 21.3647,
     longitude: -157.7469,
     organization: 'Hope in Humanity',
-    pictureURL: '/images/opportunities/streetoutreach.jpg',
+    pictureURL: '/images/opportunities/streetoutreach.webp',
     description: 'Join us for our street outreach program in Downtown Beacon City. Help distribute essential supplies, provide support to those experiencing homelessness, and raise awareness about homelessness issues in our community.',
     postedDate: new Date('2024-05-05'),
     opportunityDate: new Date('2024-05-25'),
