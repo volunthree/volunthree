@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Accordion } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 /** Renders a horizontal card of a Volunteer Organization */
 
@@ -15,7 +16,7 @@ const Organization = ({ org }) => (
     </Accordion.Header>
     <Accordion.Body>
       <p>{org.organizationDescription}</p>
-      <Button variant="primary" target="_blank">Visit Organization Page</Button>
+      <Button variant="primary" target="_blank" as={NavLink} to={`/volunteer-organizations/${org._id}`}>Visit Organization Page</Button>
     </Accordion.Body>
   </Accordion.Item>
 );

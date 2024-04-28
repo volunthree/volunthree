@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import { Button, Card } from 'react-bootstrap';
 import { serviceRequests } from '../utilities/LocalVariables';
 
-const MapContainer = () => {
+const MapContainerIndividuals = () => {
   const [activeMarker, setActiveMarker] = useState(null);
   const [showInfoWindow, setShowInfoWindow] = useState(false);
   const [selectedRequest, setSelectedRequest] = useState(null);
@@ -62,4 +62,4 @@ const MapContainer = () => {
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyCBwLMpKug6S5uq-eQYKq1bCKWBVka1Ing',
-})(MapContainer);
+})(MapContainerIndividuals);
