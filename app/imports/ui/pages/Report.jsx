@@ -1,11 +1,21 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Printer, Share } from 'react-bootstrap-icons';
 import PieChart from '../components/PieChart';
 import BarChart from '../components/BarChart';
 
+// Temporary graph variables until Users are Implemented
+const barLabels = ['May 23', 'June 23', 'July 23', 'August 23', 'September 23', 'October 23', 'November 23', 'December 23', 'January 24', 'February 24', 'March 24', 'April 24'];
+const barData = [25, 10, 35, 18, 42, 7, 31, 14, 29, 12, 19, 3];
+const barLabel = "Kenji's Monthly Volunteer Hours";
+const barXLabel = 'Month Of Volunteering';
+const barYLabel = 'Total Hours';
+const pieLabels = ['Green Earth Initiative', 'Helping Hands Foundation', 'Brighter Futures Association', 'Paws for Hope Rescue'];
+const pieData = [18, 27, 33, 22];
+const pieLabel = 'Contributions to Organizations';
+
 /** Returns the Report page to the Voluntree website. */
 const Report = () => (
-
   <Container
     fluid
     id="report-page"
@@ -27,78 +37,64 @@ const Report = () => (
     >
       <div>
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <h1> Name's Report </h1>
+        <h1> Kenji's Report </h1>
       </div>
     </Container>
-
-    <Container fluid style={{ padding: '35px', backgroundColor: '#eefaca' }}>
-      <Container
-        className="d-flex flex-column border border-4 border-secondary pb-4"
-        style={{
-          minHeight: '100%',
-          width: '100%',
-          borderRadius: '20px',
-          backgroundColor: 'white',
-          padding: '10px',
-        }}
-      >
-        <Row>
-          <Col>
-            <p style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
-              <span style={{ fontWeight: 'bold' }}> Student Status: </span> (Full/Part)-time
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
-              <span style={{ fontWeight: 'bold' }}> Preference: </span> Agriculture
-            </p>
-          </Col>
-        </Row>
-        <Row className="pb-3">
-          <Col>
-            <h style={{ fontSize: '30px', marginLeft: '5px', marginBottom: '1px' }}>
-              <span style={{ fontWeight: 'bold' }}> Volunteer Hours: </span> 30
-            </h>
-          </Col>
-        </Row>
-
-        <Container
-          className="border border-3"
-          style={{
-            width: '95%',
-            borderRadius: '20px',
-            backgroundColor: '#f2faf9',
-          }}
-        >
-          <Row className="pt-4 pb-2">
-            <Col className="text-center" md={6}>
-              <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Work Preference in 20XX </h>
-            </Col>
-            <Col className="text-center" md={6}>
-              <h style={{ fontWeight: 'bold', fontSize: '15px' }}> Hours Worked in 20XX </h>
-            </Col>
-          </Row>
-          <Row className="p-3">
-            <Col md={6}>
-              <div className="mx-auto" style={{ maxWidth: '75%' }}>
-                <PieChart />
-              </div>
-            </Col>
-            <Col md={6}>
-              <div className="mx-auto">
-                <BarChart />
-              </div>
-            </Col>
-          </Row>
-          <Row className="justify-content-center pt-5 pb-4">
-            <Col className="text-center">
-              <Button> Print Report </Button>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
+    <Container className="printable-report" style={{ borderRadius: '10px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: 20, paddingBottom: 20 }}>
+      <Row className="mt-3 d-flex justify-content-center align-items-right" style={{ paddingTop: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20 }}>
+        <Col md={3}>
+          <Image src="/images/userImages/robJenkins.jpg" roundedCircle fluid style={{ width: '200px' }} />
+        </Col>
+        <Col md={7}>
+          <h1>Kenji Sanehira</h1>
+          <p><strong>Email: </strong> kenjisan@hawaii.edu </p>
+          <p><strong>Address: </strong>32-1479 Testing St., Honolulu, HI, 96789</p>
+          <p><strong>Phone: </strong>(808) 432-4493 </p>
+          <p><strong>Skills </strong>Food Distribution, Animal Care, Fundraising, Event Planning, Community Outreach, Public Speaking, Team Coordination, Social Media Management</p>
+        </Col>
+      </Row>
+      <hr />
+      <h1 className="text-center"> User Impact </h1>
+      <Row className="d-flex align-items-center justify-content-evenly">
+        <Col md={3} className="text-center">
+          <h1>15</h1>
+          <h5>Opportunities Completed</h5>
+        </Col>
+        <Col md={3} className="text-center">
+          <h1>34</h1>
+          <h5>Persons Helped</h5>
+        </Col>
+        <Col md={3} className="text-center">
+          <h1>295</h1>
+          <h5>Total Hours Served</h5>
+        </Col>
+      </Row>
+      <hr />
+      <Row className="d-flex align-items-center justify-content-evenly">
+        <Col md={6} className="text-center">
+          <h3>Hours Served Over Time</h3>
+          <BarChart labels={barLabels} data={barData} label={barLabel} xAxisTitle={barXLabel} yAxisTitle={barYLabel} />
+        </Col>
+        <Col md={6} className="text-center">
+          <h3>Contribution To Organizations</h3>
+          <PieChart labels={pieLabels} data={pieData} label={pieLabel} style={{ height: '400px' }} />
+        </Col>
+      </Row>
+      <hr />
+      <Row className="justify-content-center mt-3">
+        <Col xs="auto">
+          <Button variant="primary">
+            <Printer className="me-2" />
+            Print Report
+          </Button>
+        </Col>
+        <Col xs="auto">
+          <Button variant="secondary">
+            <Share className="me-2" />
+            Share Report
+          </Button>
+        </Col>
+      </Row>
     </Container>
   </Container>
 );

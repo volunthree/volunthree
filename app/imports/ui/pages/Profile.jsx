@@ -6,6 +6,10 @@ import BarChart from '../components/BarChart';
 import { tempOpportunities } from '../utilities/LocalVariables';
 
 const tempEvent = tempOpportunities[0];
+const labels = ['February', 'March', 'April'];
+const data = [12, 19, 3];
+const label = "Kenji's Contributions for the Past 3 Months";
+
 const Profile = () => (
   <Container fluid style={{ padding: 0 }}>
     <Container
@@ -128,17 +132,17 @@ const Profile = () => (
       <Row className="d-flex justify-content-center">
         <Col md={4}>
           <Col className="text-center">
-            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <Odometer value={15} format="d" style={{ fontSize: '3rem' }} />
             <h5>Opportunities Completed</h5>
-            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <Odometer value={34} format="d" style={{ fontSize: '3rem' }} />
             <h5>Persons Helped</h5>
-            <Odometer value={Math.floor(Math.random() * 1000)} format="d" style={{ fontSize: '3rem' }} />
+            <Odometer value={295} format="d" style={{ fontSize: '3rem' }} />
             <h5>Total Hours Served</h5>
           </Col>
           <Button variant="primary" className="w-100" as={NavLink} to="/report"> View my Full Report! </Button>
         </Col>
         <Col md={6}>
-          <BarChart />
+          <BarChart labels={labels} data={data} label={label} xAxisTitle="Month of Volunteering" yAxisTitle="Hours Served" />
         </Col>
       </Row>
       <hr className="my-5" />
