@@ -45,7 +45,7 @@ BarChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.number).isRequired,
   label: PropTypes.string.isRequired,
   xAxisTitle: PropTypes.string.isRequired,
-  yAxisTitle: PropTypes.string.isRequired
+  yAxisTitle: PropTypes.string.isRequired,
 };
 
 export default BarChart;
