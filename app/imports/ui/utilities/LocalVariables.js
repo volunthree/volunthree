@@ -532,6 +532,7 @@ export const serviceRequests = [
     description: "I'm working on a project and need help with designing graphics for social media posts. Looking for someone with experience in Adobe Photoshop or Illustrator.",
     skills: 'Graphic Design, Adobe Photoshop, Adobe Illustrator',
     image: '/images/userImages/emilyBrown.jpg',
+    category: 'Media and Design',
   },
   {
     id: 2,
@@ -544,6 +545,7 @@ export const serviceRequests = [
     description: 'Seeking a math tutor to help me prepare for an upcoming exam. Topics include calculus and algebra. Must be patient and able to explain concepts clearly.',
     skills: 'Mathematics, Calculus, Algebra, Teaching',
     image: '/images/userImages/michaelJohnson.jpg',
+    category: 'Education and Tutoring',
   },
   {
     id: 3,
@@ -556,6 +558,7 @@ export const serviceRequests = [
     description: "I'm building a website for my portfolio and need assistance with CSS styling and responsive design. Looking for someone with experience in frontend development.",
     skills: 'HTML, CSS, JavaScript, Frontend Development',
     image: '/images/userImages/janeSmith.jpg',
+    category: 'Technology and Web Development',
   },
   {
     id: 4,
@@ -568,6 +571,7 @@ export const serviceRequests = [
     description: "I'm a non-native English speaker looking for a conversation partner to practice English speaking skills. Preferably a native speaker or someone fluent in English.",
     skills: 'English Language, Conversation Practice',
     image: '/images/userImages/johnDoe.jpg',
+    category: 'Language and Cultural Exchange',
   },
   {
     id: 5,
@@ -580,5 +584,6 @@ export const serviceRequests = [
     description: 'Seeking a fitness trainer to help me create a personalized workout plan and provide guidance on nutrition. Must be certified and experienced in personal training.',
     skills: 'Fitness Training, Nutrition, Personal Training',
     image: '/images/userImages/davidWilson.jpg',
+    category: 'Health and Wellness',
   },
 ];

@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Tabs, Tab } from 'react-bootstrap';
 import { PAGE_IDS } from '../utilities/PageIDs';
 import MakeARequest from '../components/MakeARequest';
 import ServeTheCommunity from '../components/ServeTheCommunity';
 import MapContainerIndividuals from '../components/MapContainerIndividuals';
+import ServeAnon from '../components/ServeAnon';
+import ServiceTutorial from '../components/ServiceTutorial';
 
 /** Returns the homepage to the Voluntree website. */
 const IndividualsInNeedOfService = () => {
-  const [key, setKey] = useState('serveCommunity');
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
+  const [key, setKey] = useState('tutorial');
   return (
     <Container
       fluid
@@ -35,19 +42,39 @@ const IndividualsInNeedOfService = () => {
         </div>
       </Container>
       <Container fluid style={{ alignContent: 'center' }}>
-        <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly' }}>
-          <Tab eventKey="serveCommunity" title="Serve The Community">
-            <Container fluid>
-              <ServeTheCommunity />
-            </Container>
-            <MapContainerIndividuals />
-          </Tab>
-          <Tab eventKey="makeRequest" title="Make a Request">
-            <Container>
-              <MakeARequest />
-            </Container>
-          </Tab>
-        </Tabs>
+        {currentUser === '' ? (
+          <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly' }}>
+            <Tab eventKey="tutorial" title="How it Works">
+              <Container fluid>
+                <ServiceTutorial />
+              </Container>
+            </Tab>
+            <Tab eventKey="serveAnon" title="Serve The Community">
+              <Container>
+                <ServeAnon />
+              </Container>
+            </Tab>
+          </Tabs>
+        ) : (
+          <Tabs id="iinos-tabs" className="text-success" activeKey={key} onSelect={(k) => setKey(k)} style={{ justifyContent: 'space-evenly' }}>
+            <Tab eventKey="tutorial" title="How it Works">
+              <Container fluid>
+                <ServiceTutorial />
+              </Container>
+            </Tab>
+            <Tab eventKey="serveCommunity" title="Serve The Community">
+              <Container fluid>
+                <ServeTheCommunity />
+              </Container>
+              <MapContainerIndividuals />
+            </Tab>
+            <Tab eventKey="makeRequest" title="Make a Request">
+              <Container>
+                <MakeARequest />
+              </Container>
+            </Tab>
+          </Tabs>
+        )}
       </Container>
     </Container>
   );

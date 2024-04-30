@@ -5,9 +5,9 @@ import 'odometer/themes/odometer-theme-default.css';
 import { tempOpportunities, tempOrganizations, contactsList } from '../utilities/LocalVariables';
 
 // TODO: Replace these by the most recent events following the current date.
-const tempEvent1 = tempOpportunities[1];
-const tempEvent2 = tempOpportunities[7];
-const tempOrg = tempOrganizations[1];
+const tempEvent1 = tempOpportunities[12];
+const tempEvent2 = tempOpportunities[13];
+const tempOrg = tempOrganizations[5];
 
 const UserDashboard = () => (
   <div style={{ alignContent: 'center' }}>
@@ -102,8 +102,8 @@ const UserDashboard = () => (
             <h4>{tempOrg.organizationName}</h4>
             <p>{tempOrg.organizationDescription}</p>
             <div className="d-flex justify-content-center">
-              <Image src={contactsList[0].image} roundedCircle style={{ width: '50px', height: '50px' }} />
-              <p className="mt-2" style={{ paddingLeft: 10, fontWeight: 'bold', paddingBottom: 20 }}>Your friend John has helped this organization before.</p>
+              <Image src={contactsList[3].image} roundedCircle style={{ width: '50px', height: '50px' }} />
+              <p className="mt-2" style={{ paddingLeft: 10, fontWeight: 'bold', paddingBottom: 20 }}>Your friend Emily has helped this organization before.</p>
             </div>
             <div className="text-center">
               <Button variant="success" style={{ marginLeft: 10, marginRight: 10 }} as={NavLink} to=""> Find out more about {tempOrg.organizationName}!</Button>
