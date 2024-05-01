@@ -106,7 +106,7 @@ const UserDashboard = () => (
               <p className="mt-2" style={{ paddingLeft: 10, fontWeight: 'bold', paddingBottom: 20 }}>Your friend Emily has helped this organization before.</p>
             </div>
             <div className="text-center">
-              <Button variant="success" style={{ marginLeft: 10, marginRight: 10 }} as={NavLink} to=""> Find out more about {tempOrg.organizationName}!</Button>
+              <Button variant="success" style={{ marginLeft: 10, marginRight: 10 }} as={NavLink} to="/volunteer-organizations/5"> Find out more about {tempOrg.organizationName}!</Button>
             </div>
           </div>
         </Col>
