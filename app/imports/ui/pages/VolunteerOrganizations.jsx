@@ -5,7 +5,7 @@ import { tempOrganizations } from '../utilities/LocalVariables';
 import Organization from '../components/Organization';
 
 const VolunteerOrganizations = () => (
-  <Container fluid id={PAGE_IDS.VOLUNTEER_OPPORTUNITIES} style={{ padding: 0 }}>
+  <Container fluid id={PAGE_IDS.VOLUNTEER_OPPORTUNITIES}>
     <Container
       fluid
       className="d-flex align-items-center justify-content-center"

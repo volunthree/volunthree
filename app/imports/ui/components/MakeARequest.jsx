@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, Container, Form, Image, Modal } from 'react-bootstrap';
+import { Button, Card, Container, Form, Image, Modal, Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { PersonCircle } from 'react-bootstrap-icons';
 
@@ -43,33 +43,54 @@ const MakeARequest = () => {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formCategory">
-            <Form.Label>What would you categorize this request as?</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Please put a category for your request here."
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formTime">
-            <Form.Label>When do you need assistance?</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter a time for your request. (ex. Tuesday at 10:00 pm)"
-              value={timeOfRequest}
-              onChange={(e) => setTimeOfRequest(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formLocation">
-            <Form.Label>Where do you need assistance?</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter the location of the request. (ex. Honolulu)"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
-          </Form.Group>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3" controlId="formCategory">
+                <Form.Label>What would you categorize this request as?</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Please put a category for your request here."
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3" controlId="formTime">
+                <Form.Label>When do you need assistance?</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter a time for your request. (ex. Tuesday at 10:00 pm)"
+                  value={timeOfRequest}
+                  onChange={(e) => setTimeOfRequest(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3" controlId="formLocation">
+                <Form.Label>Where do you need assistance?</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter the location of the request. (ex. Honolulu)"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3" controlId="formLocation">
+                <Form.Label>Are there any skills required/requested? List them here!</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Please list any skills that this request may need here."
+                  value={skills}
+                  onChange={(e) => setSkills(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
           <Form.Group className="mb-3" controlId="formLocation">
             <Form.Label>Describe the request you are making.</Form.Label>
             <Form.Control
@@ -77,15 +98,6 @@ const MakeARequest = () => {
               placeholder="Enter your request description here."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formLocation">
-            <Form.Label>Are there any skills required/requested? List them here!</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Please list any skills that this request may need here."
-              value={skills}
-              onChange={(e) => setSkills(e.target.value)}
             />
           </Form.Group>
           <div className="text-center">

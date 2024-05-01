@@ -40,7 +40,7 @@ const ServiceTutorial = () => {
           </Col>
         </Row>
 
-        <Row className="align-items-center" style={{paddingBottom: 20, marginBottom: 20}}>
+        <Row className="align-items-center" style={{ paddingBottom: 20, marginBottom: 20 }}>
           <Col md={6} className="order-md-1">
             <h3>Visualize User Requests</h3>
             <p> Worried about a long commute? User requests are also able to be seen on the Individuals In Need Of Service Map in order for users to see requests made around their general location.</p>

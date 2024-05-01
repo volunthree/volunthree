@@ -16,7 +16,7 @@ const Organization = ({ org }) => (
     </Accordion.Header>
     <Accordion.Body>
       <p>{org.organizationDescription}</p>
-      <Button variant="primary" target="_blank" as={NavLink} to={`/volunteer-organizations/${org._id}`}>Visit Organization Page</Button>
+      <Button variant="primary" as={NavLink} to={`/volunteer-organizations/${org._id}`}>Visit Organization Page</Button>
     </Accordion.Body>
   </Accordion.Item>
 );
